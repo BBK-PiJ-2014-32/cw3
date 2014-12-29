@@ -21,7 +21,7 @@
  */
 public class ArrayList implements List {
 	
-	public ArrayList{
+	public ArrayList(){
 		
 	}
 	

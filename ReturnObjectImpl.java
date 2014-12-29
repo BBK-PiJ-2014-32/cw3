@@ -7,7 +7,7 @@
 public class ReturnObjectImpl implements ReturnObject {
 	
 	
-	public ReturnObjectImpl{
+	public ReturnObjectImpl(){
 		
 	}
 	/**

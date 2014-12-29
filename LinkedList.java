@@ -21,7 +21,7 @@
  */
 public class LinkedList implements List {
 	
-	public LinkedList{
+	public LinkedList(){
 		
 	}
 	
