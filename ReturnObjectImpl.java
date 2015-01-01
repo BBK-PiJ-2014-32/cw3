@@ -5,10 +5,10 @@
  * @author PiJ
  */
 public class ReturnObjectImpl implements ReturnObject {
+	private Object returnObject;
 	
-	
-	public ReturnObjectImpl(){
-		
+	public ReturnObjectImpl(Object object){
+		this.returnObject = object;
 	}
 	/**
 	 * Returns whether there has been an error
@@ -48,6 +48,11 @@ public class ReturnObjectImpl implements ReturnObject {
 	 *         error
 	 */
 	public Object getReturnValue(){
-		return null;
+		if (hasError == true){
+			return null;
+		} else {
+			return object;
+		}
+
 	}
 }
