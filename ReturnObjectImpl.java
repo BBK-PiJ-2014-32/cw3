@@ -27,7 +27,11 @@ public class ReturnObjectImpl implements ReturnObject {
 	 * @return the error message
 	 */
 	public ErrorMessage getError(){
-		return null;
+		if (hasError == false){
+			return NO_ERROR;
+		} else {
+			return ErrorMessage;
+		}
 	}
 
 	/**
