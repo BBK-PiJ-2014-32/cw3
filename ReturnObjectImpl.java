@@ -27,10 +27,10 @@ public class ReturnObjectImpl implements ReturnObject {
 	 * @return the error message
 	 */
 	public ErrorMessage getError(){
-		if (hasError == false){
-			return NO_ERROR;
+		if (hasError() == false){
+			return ErrorMessage.NO_ERROR;
 		} else {
-			return ErrorMessage;
+			return null;//Need to add else ifs for other errors.
 		}
 	}
 
@@ -48,10 +48,10 @@ public class ReturnObjectImpl implements ReturnObject {
 	 *         error
 	 */
 	public Object getReturnValue(){
-		if (hasError == true){
+		if (hasError() == true){
 			return null;
 		} else {
-			return object;
+			return returnObject;
 		}
 
 	}
