@@ -20,9 +20,12 @@
  * @author PiJ
  */
 public class LinkedList implements List {
+	private ReturnObjectImpl first;
+	private int count;
 	
 	public LinkedList(){
-		
+		first = null;
+		count = 0;
 	}
 	
 	/**
@@ -31,7 +34,11 @@ public class LinkedList implements List {
 	 * @return true if the list is empty, false otherwise. 
 	 */
 	public boolean isEmpty(){
-		return false;
+		if (first == null){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
