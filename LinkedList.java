@@ -47,7 +47,7 @@ public class LinkedList implements List {
 	 * @return the number of items currently in the list
 	 */
 	public int size(){
-		return 0;
+		return count;
 	}
 
 	/**
