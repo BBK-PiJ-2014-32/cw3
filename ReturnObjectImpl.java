@@ -6,16 +6,22 @@
  */
 public class ReturnObjectImpl implements ReturnObject {
 	private Object returnObject;
+	private ErrorMessage error;
 	
 	public ReturnObjectImpl(Object object){
 		this.returnObject = object;
+		this.error = null;
 	}
 	/**
 	 * Returns whether there has been an error
 	 * @return whether there has been an error
 	 */
 	public boolean hasError(){
-		return false;
+		if (error == null || error.equals(ErrorMessage.NO_ERROR)){
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	/**
