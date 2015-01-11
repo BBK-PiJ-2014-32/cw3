@@ -150,6 +150,7 @@ public class LinkedList implements List {
 			}
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+ 			System.out.println("INVALID_ARGUMENT");
 			return nullMessage;
  			}
 		}
