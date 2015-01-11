@@ -118,12 +118,14 @@ public class LinkedList implements List {
 		if(!item.equals(null)){  
 			//checks whether first node is null
 			if (first == null){
-				first.obj = item;
+				myNode tempNode = new myNode(item);
+				first = tempNode;
 				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
 				if(first.next == null){
-					first.next.obj = item;
+					myNode tempNode = new myNode(item);
+					first.next = tempNode;
 					indexCount = 1;
 				} else {
 					myNode newNode = new myNode(item);
@@ -131,29 +133,30 @@ public class LinkedList implements List {
 					ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
 					return emptyObj;
 				}
+			 return null;
 			}
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
  			}
 		}
-	}
 	
 	public class myNode{
-		protected Object obj;
+		protected Object objectValue;
 		protected myNode next;
 		
 		
 		public myNode(Object obj){
-			this.obj = obj;
+			this.objectValue = obj;
 			this.next = null;
 		}
 		
-		public myNode thisNext(myNode current){
+		public myNode getNext(myNode current){
 			return next;
 		}
 		
 		public void setNext(myNode current){
 			this.next = current;
+		}
 	}
 }
