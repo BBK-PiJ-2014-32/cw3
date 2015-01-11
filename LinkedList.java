@@ -64,12 +64,17 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
+		if(index < 0 || index > indexCount - 1){
+			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else {
 		Node thisNode = first;
-		for(int i = 0; i < index; i++){
-			thisNode = thisNode.next;
-		} 
+			for(int i = 0; i < index; i++){
+				thisNode = thisNode.next;
+			} 
 		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
 		return returnObj;
+		}
+		return null;
 	}
 
 	/**
