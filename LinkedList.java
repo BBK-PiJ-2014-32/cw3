@@ -115,7 +115,7 @@ public class LinkedList implements List {
 	 */
 	public ReturnObject add(Object item){
 		//checks if item is null or not
-		if(!item.equals(null)){  
+		if(item != null){  
 			//checks whether first node is null
 			if (first == null){
 				myNode tempNode = new myNode(item);
