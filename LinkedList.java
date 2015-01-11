@@ -20,7 +20,7 @@
  * @author P Hannant
  */
 public class LinkedList implements List {
-	private Node first;
+	private myNode first;
 	private int count;
 	
 	public LinkedList(){
@@ -114,21 +114,36 @@ public class LinkedList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(Object item){
-		return null;
+		//checks if item is null or not
+		if(!item.equals(null)){  
+			//checks whether first node is null
+			if (first == null){
+				first.obj = item;
+				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				return emptyObj;
+			}else {
+			}
+ 		} else {
+ 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return nullMessage;
+ 			}
+		}
 	}
 	
-	private class Node{
-		private ReturnObjectImpl obj;
-		private Node next;
+	public class myNode{
+		private Object obj;
+		private myNode next;
 		
-		public Node(ReturnObjectImpl obj){
+		public myNode(Object obj){
 			this.obj = obj;
-			this.next = next;
+			this.next = null;
 		}
 		
-		public getNext(Node current){
+		public myNode thisNext(myNode current){
 			return next;
 		}
 		
+		public void setNext(myNode current){
+			this.next = current;
 	}
 }
