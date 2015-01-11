@@ -21,11 +21,11 @@
  */
 public class LinkedList implements List {
 	private myNode first;
-	private int count;
+	private int indexCount;
 	
 	public LinkedList(){
 		first = null;
-		count = 0;
+		indexCount = 0;
 	}
 	
 	/**
@@ -47,7 +47,7 @@ public class LinkedList implements List {
 	 * @return the number of items currently in the list
 	 */
 	public int size(){
-		return count;
+		return indexCount;
 	}
 
 	/**
@@ -122,6 +122,15 @@ public class LinkedList implements List {
 				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
+				if(first.next == null){
+					first.next.obj = item;
+					indexCount = 1;
+				} else {
+					myNode newNode = new myNode(item);
+					indexCount++;
+					ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+					return emptyObj;
+				}
 			}
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
@@ -131,8 +140,9 @@ public class LinkedList implements List {
 	}
 	
 	public class myNode{
-		private Object obj;
-		private myNode next;
+		protected Object obj;
+		protected myNode next;
+		
 		
 		public myNode(Object obj){
 			this.obj = obj;
