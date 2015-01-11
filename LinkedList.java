@@ -17,10 +17,10 @@
  * {@see ReturnObject} that will contain either an object or an error
  * value of the right kind (as defined in {@see ErrorMessage}). 
  * 
- * @author PiJ
+ * @author P Hannant
  */
 public class LinkedList implements List {
-	private ReturnObjectImpl first;
+	private Node first;
 	private int count;
 	
 	public LinkedList(){
@@ -115,5 +115,16 @@ public class LinkedList implements List {
 	 */
 	public ReturnObject add(Object item){
 		return null;
+	}
+	
+	private class Node{
+		private ReturnObjectImpl obj;
+		private Node next;
+		
+		public Node(ReturnObjectImpl obj){
+			this.obj = obj;
+			this.next = next;
+		}
+		
 	}
 }
