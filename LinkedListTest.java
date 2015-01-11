@@ -1,6 +1,6 @@
 
 public class LinkedListTest {
-	
+	//main primary test code
 	public static void main(String[] args){
 		List testList = new LinkedList();
 		testList.add(1);
