@@ -8,6 +8,11 @@ public class LinkedListTest {
 		testList.add(3);
 		testList.add(4);
 		testList.add(null);
+		int x = testList.size();
+		System.out.println("size = " + x);
+		ReturnObject newObj = new ReturnObjectImpl(testList.get(2), null);
+		Object obj = newObj.getReturnValue();
+		System.out.println(obj);
 	}
 
 }

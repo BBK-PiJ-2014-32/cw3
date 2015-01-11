@@ -64,11 +64,11 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(index < 0 || index > indexCount - 1){
+		if(index < 0 || index - 1 > indexCount){
 			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else {
 		Node thisNode = first;
-			for(int i = 0; i < index; i++){
+			for(int i = 0; i <= index; i++){;
 				thisNode = thisNode.next;
 			} 
 		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
@@ -133,15 +133,18 @@ public class LinkedList implements List {
 			if (first == null){
 				tempNode = new Node(item);
 				first = tempNode;
+				indexCount++;
 				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
 				if(first.next == null){
 					tempNode = new Node(item);
-					first.next = tempNode;
-					indexCount = 1;
+					first.next = tempNode;			
+					indexCount++;
 				} else {
-					first.getLast(first.next);
+					Node last = first.getLast();
+					last.next = new Node(item);
+					indexCount++;
 				}
 			 return null;
 			}
@@ -165,17 +168,17 @@ public class LinkedList implements List {
 			return next;
 		}
 		
-		public Node getLast(Node current){
-			if(current.next == null){
-				return current;
-			} else {
-				getLast(current.next);
-			}
-			return null;
+		public Node getLast(){
+			Node returnNode = first;
+				for(int i = 0; i < indexCount - 1; i++){
+					returnNode = returnNode.next;;
+				}
+			return returnNode;
 		}
-		
+	
 		public void setNext(Node current){
 			this.next = current;
 		}
 	}
+	
 }
