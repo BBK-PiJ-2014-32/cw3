@@ -20,11 +20,14 @@
  * @author P Hannant
  */
 public class LinkedList implements List {
-	private myNode first;
+	private Node first;
+	private Node tempNode;
 	private int indexCount;
+	
 	
 	public LinkedList(){
 		first = null;
+		tempNode = null;
 		indexCount = 0;
 	}
 	
@@ -61,7 +64,12 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		return null;
+		Node thisNode = first;
+		for(int i = 0; i < index; i++){
+			thisNode = thisNode.next;
+		} 
+		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
+		return returnObj;
 	}
 
 	/**
@@ -118,20 +126,17 @@ public class LinkedList implements List {
 		if(item != null){  
 			//checks whether first node is null
 			if (first == null){
-				myNode tempNode = new myNode(item);
+				tempNode = new Node(item);
 				first = tempNode;
 				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
 				if(first.next == null){
-					myNode tempNode = new myNode(item);
+					tempNode = new Node(item);
 					first.next = tempNode;
 					indexCount = 1;
 				} else {
-					myNode newNode = new myNode(item);
-					indexCount++;
-					ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
-					return emptyObj;
+					
 				}
 			 return null;
 			}
@@ -141,21 +146,21 @@ public class LinkedList implements List {
  			}
 		}
 	
-	public class myNode{
+	public class Node{
 		protected Object objectValue;
-		protected myNode next;
+		protected Node next;
 		
 		
-		public myNode(Object obj){
+		public Node(Object obj){
 			this.objectValue = obj;
 			this.next = null;
 		}
 		
-		public myNode getNext(myNode current){
+		public Node getNext(Node current){
 			return next;
 		}
 		
-		public void setNext(myNode current){
+		public void setNext(Node current){
 			this.next = current;
 		}
 	}
