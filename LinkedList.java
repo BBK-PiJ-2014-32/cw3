@@ -141,7 +141,7 @@ public class LinkedList implements List {
 					first.next = tempNode;
 					indexCount = 1;
 				} else {
-					
+					first.getLast(first.next);
 				}
 			 return null;
 			}
@@ -163,6 +163,15 @@ public class LinkedList implements List {
 		
 		public Node getNext(Node current){
 			return next;
+		}
+		
+		public Node getLast(Node current){
+			if(current.next == null){
+				return current;
+			} else {
+				getLast(current.next);
+			}
+			return null;
 		}
 		
 		public void setNext(Node current){
