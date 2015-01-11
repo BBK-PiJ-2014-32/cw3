@@ -35,9 +35,14 @@ public class ReturnObjectImpl implements ReturnObject {
 	public ErrorMessage getError(){
 		if (hasError() == false){
 			return ErrorMessage.NO_ERROR;
-		} else {
-			return null;//Need to add else ifs for other errors.
+		} else if(this.error.equals(ErrorMessage.EMPTY_STRUCTURE)) {
+			return ErrorMessage.EMPTY_STRUCTURE;
+		} else if(this.error.equals(ErrorMessage.INVALID_ARGUMENT)) {
+			return ErrorMessage.INVALID_ARGUMENT;
+		}else if(this.error.equals(ErrorMessage.INDEX_OUT_OF_BOUNDS)) {
+				return ErrorMessage.INDEX_OUT_OF_BOUNDS;
 		}
+		return null;
 	}
 
 	/**
