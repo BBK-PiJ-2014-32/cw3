@@ -126,5 +126,9 @@ public class LinkedList implements List {
 			this.next = next;
 		}
 		
+		public getNext(Node current){
+			return next;
+		}
+		
 	}
 }
