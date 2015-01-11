@@ -10,14 +10,14 @@ public class ReturnObjectImpl implements ReturnObject {
 	
 	public ReturnObjectImpl(Object object, ErrorMessage error){
 		this.returnObject = object;
-		this.error = null;
+		this.error = error;
 	}
 	/**
 	 * Returns whether there has been an error
 	 * @return whether there has been an error
 	 */
 	public boolean hasError(){
-		if (error == null || error.equals(ErrorMessage.NO_ERROR)){
+		if (error == null || error == ErrorMessage.NO_ERROR){
 			return false;
 		} else {
 			return true;
@@ -35,14 +35,9 @@ public class ReturnObjectImpl implements ReturnObject {
 	public ErrorMessage getError(){
 		if (hasError() == false){
 			return ErrorMessage.NO_ERROR;
-		} else if(this.error.equals(ErrorMessage.EMPTY_STRUCTURE)) {
-			return ErrorMessage.EMPTY_STRUCTURE;
-		} else if(this.error.equals(ErrorMessage.INVALID_ARGUMENT)) {
-			return ErrorMessage.INVALID_ARGUMENT;
-		}else if(this.error.equals(ErrorMessage.INDEX_OUT_OF_BOUNDS)) {
-				return ErrorMessage.INDEX_OUT_OF_BOUNDS;
+		} else {
+			return error;
 		}
-		return null;
 	}
 
 	/**
