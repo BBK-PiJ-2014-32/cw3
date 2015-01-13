@@ -114,14 +114,18 @@ public class LinkedList implements List {
 	public ReturnObject add(int index, Object item){
 		//checks if item is null or not
 		if(item != null){  
-			//checks whether first node is null
-			
+			if(index > 0 || index < indexCount){
+				
+			} else {
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				return outOfBoundsMessage;
+			}
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
- 			}
+ 			} return null;
 		}
-	}
+	
 
 	/**
 	 * Adds an element at the end of the list.
@@ -186,6 +190,14 @@ public class LinkedList implements List {
 	
 		public void setNext(Node current){
 			this.next = current;
+		}
+		
+		public Node getNode(int index){
+			Node returnNode = first;
+			for(int i = 0; i < index - 1; i++){
+				returnNode = returnNode.next;;
+			}
+			return returnNode;
 		}
 	}
 	
