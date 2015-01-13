@@ -115,8 +115,10 @@ public class LinkedList implements List {
 		//checks if item is null or not
 		if(item != null){  
 			if(index > 0 || index < indexCount){
-	
-				
+				Node current = new Node(null);
+				current = current.getNode(index);
+				current.next = new Node(item);
+				current.next.next = current.getNode(index + 1);	
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return outOfBoundsMessage;
