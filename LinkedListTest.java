@@ -16,6 +16,12 @@ public class LinkedListTest {
 		ReturnObject newObj = new ReturnObjectImpl(testList.get(2), null);
 		Object obj = newObj.getReturnValue();
 		System.out.println(obj);
+		Object newNode = new Object();
+		newNode = "someString";
+		testList.add(2, newNode);
+		newObj = testList.get(1);
+		newNode = newObj.getReturnValue();
+		System.out.println(testList.get(0));
 	}
 
 }
