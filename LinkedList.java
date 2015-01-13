@@ -68,9 +68,12 @@ public class LinkedList implements List {
 			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else {
 		Node thisNode = first;
-			for(int i = 0; i <= index; i++){;
+		System.out.println("1st " + thisNode.objectValue);
+			for(int i = 0; i < index; i++){;
 				thisNode = thisNode.next;
+				System.out.println("2nd " + thisNode.objectValue);
 			} 
+			System.out.println("return " + thisNode.objectValue);
 		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
 		return returnObj;
 		}
