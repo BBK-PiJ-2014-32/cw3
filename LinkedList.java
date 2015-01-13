@@ -112,7 +112,15 @@ public class LinkedList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(int index, Object item){
-		return null;
+		//checks if item is null or not
+		if(item != null){  
+			//checks whether first node is null
+			
+ 		} else {
+ 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return nullMessage;
+ 			}
+		}
 	}
 
 	/**
