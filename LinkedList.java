@@ -120,8 +120,9 @@ public class LinkedList implements List {
 			if(index > 0 || index < indexCount){
 				Node current = new Node(null);
 				current = current.getNode(index);
+				current.next = tempNode;
 				current.next = new Node(item);
-				current.next.next = current.getNode(index + 1);	
+				current.next.next = tempNode;
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return outOfBoundsMessage;
@@ -181,7 +182,7 @@ public class LinkedList implements List {
 			this.next = null;
 		}
 		
-		public Node getNext(Node current){
+		public Node getNext(){
 			return next;
 		}
 		
@@ -200,8 +201,9 @@ public class LinkedList implements List {
 		public Node getNode(int index){
 			Node returnNode = first;
 			for(int i = 0; i < index - 1; i++){
-				returnNode = returnNode.next;;
+				returnNode = returnNode.next;
 			}
+			System.out.println("get " + returnNode.objectValue);
 			return returnNode;
 		}
 	}

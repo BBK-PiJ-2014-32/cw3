@@ -19,9 +19,9 @@ public class LinkedListTest {
 		Object newNode = new Object();
 		newNode = "someString";
 		testList.add(2, newNode);
-		newObj = testList.get(1);
+		newObj = testList.get(3);
 		newNode = newObj.getReturnValue();
-		System.out.println(testList.get(0));
+		System.out.println(testList.get(1));
 	}
 
 }
