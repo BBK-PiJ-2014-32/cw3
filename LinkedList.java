@@ -109,6 +109,7 @@ public class LinkedList implements List {
 			current = current.getNode(index);
 			previous = current.getNode(index - 1);
 			previous.next = current.next;
+			indexCount--;
 			ReturnObject removedObj = new ReturnObjectImpl(current, null);
 			return removedObj;
 		} else {
