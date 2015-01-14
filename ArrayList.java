@@ -42,7 +42,11 @@ public class ArrayList implements List {
 	 * @return true if the list is empty, false otherwise. 
 	 */
 	public boolean isEmpty(){
+		if(listArray[0] == null){
+			return true;
+		} else {
 		return false;
+	}
 	}
 
 	/**
