@@ -1,3 +1,4 @@
+
 // TODO: Auto-generated Javadoc
 /**
  * A list is a collection of objects that are sorted and can be
@@ -69,7 +70,13 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		return null;
+		if(index < 0 || index - 1 > indexCount){
+			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObj;
+		} else {
+			ReturnObject returnObj = new ReturnObjectImpl(listArray[index], ErrorMessage.NO_ERROR);
+			return returnObj;
+		}
 	}
 
 	/**
