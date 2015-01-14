@@ -46,7 +46,7 @@ public class ArrayList implements List {
 			return true;
 		} else {
 		return false;
-	}
+		}
 	}
 
 	/**
@@ -55,7 +55,7 @@ public class ArrayList implements List {
 	 * @return the number of items currently in the list
 	 */
 	public int size(){
-		return 0;
+		return indexCount;
 	}
 
 	/**
