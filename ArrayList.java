@@ -1,3 +1,4 @@
+// TODO: Auto-generated Javadoc
 /**
  * A list is a collection of objects that are sorted and can be
  * accessed by index. The first element in the list is at index 0.
@@ -21,8 +22,18 @@
  */
 public class ArrayList implements List {
 	
+	/** The list array. */
+	private Object[] listArray; 
+	
+	/** The index count. */
+	private int indexCount;
+	
+	/**
+	 * Instantiates a new array list.
+	 */
 	public ArrayList(){
-		
+		this.listArray = new Object[10];
+		indexCount = 0;
 	}
 	
 	/**
@@ -109,4 +120,5 @@ public class ArrayList implements List {
 	public ReturnObject add(Object item){
 		return null;
 	}
+	
 }
