@@ -107,7 +107,7 @@ public class LinkedList implements List {
 		if(index > 0 || index < indexCount){
 			Node current = new Node(null);
 			current = current.getNode(index);
-			previous = current.getNode(index - 1);
+			previous = current.getNode(index-1);
 			previous.next = current.next;
 			indexCount--;
 			ReturnObject removedObj = new ReturnObjectImpl(current, null);
@@ -141,10 +141,12 @@ public class LinkedList implements List {
 		if(item != null){  
 			if(index > 0 || index < indexCount){
 				Node current = new Node(null);
-				current = current.getNode(index);
-				current.next = tempNode;
+				current = current.getNode(index-1);
+				tempNode = current.next;
 				current.next = new Node(item);
 				current.next.next = tempNode;
+				indexCount++;
+				return new ReturnObjectImpl(null, null);
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return outOfBoundsMessage;
@@ -152,7 +154,7 @@ public class LinkedList implements List {
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
- 			} return null;
+ 			} 
 		}
 	
 
@@ -255,7 +257,7 @@ public class LinkedList implements List {
 		 */
 		public Node getNode(int index){
 			Node returnNode = first;
-			for(int i = 0; i < index - 1; i++){
+			for(int i = 0; i < index; i++){
 				returnNode = returnNode.next;
 			}
 			return returnNode;

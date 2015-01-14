@@ -18,11 +18,11 @@ public class LinkedListTest {
 		System.out.println(obj);
 		Object newNode = new Object();
 		newNode = "someString";
+		System.out.println("add at 2");
 		testList.add(2, newNode);
+		System.out.println("remove 3");
 		testList.remove(3);
-		ReturnObject newObj2 = new ReturnObjectImpl(testList.get(3), null);
-		Object obj2 = newObj2.getReturnValue();
-		System.out.println(obj2);
+
 	}
 	
 }
