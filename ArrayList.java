@@ -1,3 +1,5 @@
+import LinkedList.Node;
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -92,7 +94,14 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		return null;
+		if(index > 0 || index < indexCount){
+			//add code here
+			ReturnObject removedObj = new ReturnObjectImpl(null, null);
+			return removedObj;
+		} else {
+			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return outOfBoundsMessage;
+		}
 	}
 
 	/**
