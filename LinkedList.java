@@ -1,3 +1,4 @@
+// TODO: Auto-generated Javadoc
 /**
  * A list is a collection of objects that are sorted and can be
  * accessed by index. The first element in the list is at index 0.
@@ -20,11 +21,20 @@
  * @author P Hannant
  */
 public class LinkedList implements List {
+	
+	/** The first. */
 	private Node first;
+	
+	/** The temp node. */
 	private Node tempNode;
+	
+	/** The index count. */
 	private int indexCount;
 	
 	
+	/**
+	 * Instantiates a new linked list.
+	 */
 	public LinkedList(){
 		first = null;
 		tempNode = null;
@@ -172,20 +182,42 @@ public class LinkedList implements List {
  			}
 		}
 	
+	/**
+	 * The Class Node.
+	 */
 	public class Node{
+		
+		/** The object value. */
 		protected Object objectValue;
+		
+		/** The next. */
 		protected Node next;
 		
 		
+		/**
+		 * Instantiates a new node.
+		 *
+		 * @param obj the obj
+		 */
 		public Node(Object obj){
 			this.objectValue = obj;
 			this.next = null;
 		}
 		
+		/**
+		 * Gets the next.
+		 *
+		 * @return the next
+		 */
 		public Node getNext(){
 			return next;
 		}
 		
+		/**
+		 * Gets the last.
+		 *
+		 * @return the last
+		 */
 		public Node getLast(){
 			Node returnNode = first;
 				for(int i = 0; i < indexCount - 1; i++){
@@ -194,10 +226,21 @@ public class LinkedList implements List {
 			return returnNode;
 		}
 	
+		/**
+		 * Sets the next.
+		 *
+		 * @param current the new next
+		 */
 		public void setNext(Node current){
 			this.next = current;
 		}
 		
+		/**
+		 * Gets the node.
+		 *
+		 * @param index the index
+		 * @return the node
+		 */
 		public Node getNode(int index){
 			Node returnNode = first;
 			for(int i = 0; i < index - 1; i++){
