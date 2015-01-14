@@ -79,6 +79,7 @@ public class LinkedList implements List {
 	public ReturnObject get(int index){
 		if(index < 0 || index - 1 > indexCount){
 			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObj;
 		} else {
 		Node thisNode = first;
 			for(int i = 0; i < index; i++){;
@@ -87,7 +88,7 @@ public class LinkedList implements List {
 		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
 		return returnObj;
 		}
-		return null;
+		
 	}
 
 	/**
@@ -191,7 +192,7 @@ public class LinkedList implements List {
 			return nullMessage;
  			}
 		}
-	
+
 	/**
 	 * The Class Node.
 	 */
@@ -259,5 +260,7 @@ public class LinkedList implements List {
 			return returnNode;
 		}
 	}
+	
+
 	
 }
