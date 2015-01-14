@@ -13,15 +13,16 @@ public class LinkedListTest {
 		System.out.println(errorOut);
 		int x = testList.size();
 		System.out.println("size = " + x);
-		ReturnObject newObj = new ReturnObjectImpl(testList.get(2), null);
+		ReturnObject newObj = new ReturnObjectImpl(testList.get(3), null);
 		Object obj = newObj.getReturnValue();
 		System.out.println(obj);
 		Object newNode = new Object();
 		newNode = "someString";
 		testList.add(2, newNode);
-		newObj = testList.get(3);
-		newNode = newObj.getReturnValue();
-		System.out.println(testList.get(1));
+		testList.remove(3);
+		ReturnObject newObj2 = new ReturnObjectImpl(testList.get(3), null);
+		Object obj2 = newObj2.getReturnValue();
+		System.out.println(obj2);
 	}
-
+	
 }

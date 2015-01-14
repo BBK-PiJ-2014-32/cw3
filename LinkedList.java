@@ -24,9 +24,11 @@ public class LinkedList implements List {
 	
 	/** The first. */
 	private Node first;
-	
+
 	/** The temp node. */
 	private Node tempNode;
+	
+	private Node previous; 
 	
 	/** The index count. */
 	private int indexCount;
@@ -37,6 +39,7 @@ public class LinkedList implements List {
 	 */
 	public LinkedList(){
 		first = null;
+		previous = null;
 		tempNode = null;
 		indexCount = 0;
 	}
@@ -78,12 +81,9 @@ public class LinkedList implements List {
 			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else {
 		Node thisNode = first;
-		System.out.println("1st " + thisNode.objectValue);
 			for(int i = 0; i < index; i++){;
 				thisNode = thisNode.next;
-				System.out.println("2nd " + thisNode.objectValue);
 			} 
-			System.out.println("return " + thisNode.objectValue);
 		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
 		return returnObj;
 		}
@@ -103,7 +103,17 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		return null;
+		if(index > 0 || index < indexCount){
+			Node current = new Node(null);
+			current = current.getNode(index);
+			previous = current.getNode(index - 1);
+			previous.next = current.next;
+			ReturnObject removedObj = new ReturnObjectImpl(current, null);
+			return removedObj;
+		} else {
+			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return outOfBoundsMessage;
+		}
 	}
 
 	/**
@@ -246,7 +256,6 @@ public class LinkedList implements List {
 			for(int i = 0; i < index - 1; i++){
 				returnNode = returnNode.next;
 			}
-			System.out.println("get " + returnNode.objectValue);
 			return returnNode;
 		}
 	}
