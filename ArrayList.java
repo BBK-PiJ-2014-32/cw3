@@ -155,12 +155,22 @@ public class ArrayList implements List {
  			}
 	}
 	
+	/**
+	 * Array copier remove.
+	 *
+	 * @param index the index
+	 */
 	public void ArrayCopierRemove(int index){
 		for(int i = index; i < indexCount; i++){
 			listArray[i] = listArray[(i+1)];
 		}
 	}
 	
+	/**
+	 * Array copier add.
+	 *
+	 * @param index the index
+	 */
 	public void ArrayCopierAdd(int index){
 		for(int i = index; i < indexCount; i++){
 			listArray[(i+1)] = listArray[i];
