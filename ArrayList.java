@@ -124,7 +124,9 @@ public class ArrayList implements List {
 		//checks if item is null or not
 		if(item != null){  
 			if(index > 0 || index < indexCount){
-				
+				arrayCopierAdd(index);
+				listArray[index] = item;
+				indexCount++;
 				return new ReturnObjectImpl(null, null);
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -172,7 +174,7 @@ public class ArrayList implements List {
 	 *
 	 * @param index the index
 	 */
-	public void ArrayCopierRemove(int index){
+	public void arrayCopierRemove(int index){
 		for(int i = index; i < indexCount; i++){
 			listArray[i] = listArray[(i+1)];
 		}
@@ -183,7 +185,7 @@ public class ArrayList implements List {
 	 *
 	 * @param index the index
 	 */
-	public void ArrayCopierAdd(int index){
+	public void arrayCopierAdd(int index){
 		for(int i = index; i < indexCount; i++){
 			listArray[(i+1)] = listArray[i];
 		}
