@@ -121,7 +121,19 @@ public class ArrayList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(int index, Object item){
-		return null;
+		//checks if item is null or not
+		if(item != null){  
+			if(index > 0 || index < indexCount){
+				
+				return new ReturnObjectImpl(null, null);
+			} else {
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				return outOfBoundsMessage;
+			}
+		} else {
+			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return nullMessage;
+		}
 	}
 
 	/**
@@ -177,4 +189,4 @@ public class ArrayList implements List {
 		}
 	}
 }
-}
+
