@@ -1,5 +1,3 @@
-import LinkedList.Node;
-
 
 // TODO: Auto-generated Javadoc
 /**
@@ -138,7 +136,23 @@ public class ArrayList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(Object item){
-		return null;
+		if(item != null){  
+			//checks whether first node is null
+			if (listArray[0] == null){
+				listArray[0] = item;
+				indexCount++;
+				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				return emptyObj;
+			}else {
+				listArray[indexCount] = item;
+				indexCount++;
+				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				return emptyObj;
+				}
+ 		} else {
+ 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			return nullMessage;
+ 			}
 	}
 	
 }
