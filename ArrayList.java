@@ -155,4 +155,9 @@ public class ArrayList implements List {
  			}
 	}
 	
+	public void ArrayCopier(int index){
+		for(int i = index; i < indexCount; i++){
+			listArray[i] = listArray[(i-1)];
+		}
+	}
 }
