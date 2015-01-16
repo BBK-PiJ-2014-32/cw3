@@ -3,8 +3,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ListTest.
+ */
 public class ListTest {
 
+	/**
+	 * Array list add test.
+	 */
 	@Test
 	public void arrayListAddTest() {
 		List myArrayList = new ArrayList();
@@ -15,8 +22,11 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 
+	/**
+	 * Array list multpile add and get single test.
+	 */
 	@Test
-	public void arrayListMultpilAddGetTest(){
+	public void arrayListMultpileAddGetTest(){
 		List myArrayList = new ArrayList();
 		myArrayList.add("a");
 		myArrayList.add("b");
@@ -30,6 +40,9 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Array list remove test.
+	 */
 	@Test
 	public void arrayListRemoveTest(){
 		List myArrayList = new ArrayList();
