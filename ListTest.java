@@ -9,7 +9,8 @@ public class ListTest {
 	public void arrayListAddTest() {
 		List myArrayList = new ArrayList();
 		myArrayList.add("a");
-		Object output = myArrayList.get(0);
+		ReturnObject returObj = myArrayList.get(0);
+		Object output = returObj.getReturnValue();
 		Object expected = "a";
 		assertEquals(expected, output);
 	}
