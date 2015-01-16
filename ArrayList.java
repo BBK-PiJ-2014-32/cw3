@@ -93,7 +93,8 @@ public class ArrayList implements List {
 	 */
 	public ReturnObject remove(int index){
 		if(index > 0 || index < indexCount){
-			//add code here
+			arrayCopierRemove(index);
+			listArray[indexCount] = null; 
 			ReturnObject removedObj = new ReturnObjectImpl(null, null);
 			return removedObj;
 		} else {
