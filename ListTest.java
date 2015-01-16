@@ -78,4 +78,11 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	@Test
+	public void arrayListEmptyTest(){
+		List myArrayList = new ArrayList();
+		boolean output = myArrayList.isEmpty();
+		boolean expected = true;
+		assertEquals(expected, output);
+	}
 }
