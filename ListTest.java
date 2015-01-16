@@ -15,4 +15,19 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 
+	@Test
+	public void arayListMultpilAddGetTest(){
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		ReturnObject returObj = myArrayList.get(3);
+		Object output = returObj.getReturnValue();
+		Object expected = "d";
+		assertEquals(expected, output);
+		
+	}
 }
