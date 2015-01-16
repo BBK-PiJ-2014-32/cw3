@@ -59,4 +59,23 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Checks the last entry is null after it is rearranged after an element is removed.
+	 */
+	@Test
+	public void arrayListCheckLast(){
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		myArrayList.remove(2);
+		ReturnObject returObj = myArrayList.get(5);
+		Object output = returObj.getReturnValue();
+		Object expected = null;
+		assertEquals(expected, output);
+	}
+	
 }
