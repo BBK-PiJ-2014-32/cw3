@@ -85,4 +85,18 @@ public class ListTest {
 		boolean expected = true;
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void arrayListSize(){
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		int output = myArrayList.size();
+		int expected = 6;
+		assertEquals(expected, output);
+	}
 }
