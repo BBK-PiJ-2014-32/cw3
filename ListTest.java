@@ -78,6 +78,9 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Array list empty test.
+	 */
 	@Test
 	public void arrayListEmptyTest(){
 		List myArrayList = new ArrayList();
@@ -86,8 +89,11 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Array list size test.
+	 */
 	@Test
-	public void arrayListSize(){
+	public void arrayListSizeTest(){
 		List myArrayList = new ArrayList();
 		myArrayList.add("a");
 		myArrayList.add("b");
