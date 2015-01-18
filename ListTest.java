@@ -105,4 +105,14 @@ public class ListTest {
 		int expected = 6;
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void linkedListTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		ReturnObject returObj = myLinkedList.get(0);
+		Object output = returObj.getReturnValue();
+		Object expected = "a";
+		assertEquals(expected, output);
+	}
 }
