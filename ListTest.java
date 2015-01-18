@@ -106,6 +106,9 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Linked list test.
+	 */
 	@Test
 	public void linkedListTest(){
 		List myLinkedList = new LinkedList();
@@ -113,6 +116,24 @@ public class ListTest {
 		ReturnObject returObj = myLinkedList.get(0);
 		Object output = returObj.getReturnValue();
 		Object expected = "a";
+		assertEquals(expected, output);
+	}
+	
+	/**
+	 * Multiply linked list test.
+	 */
+	@Test
+	public void multiplyLinkedListTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add("f");
+		ReturnObject returObj = myLinkedList.get(4); //check indexcount in list
+		Object output = returObj.getReturnValue();
+		Object expected = "e";
 		assertEquals(expected, output);
 	}
 }
