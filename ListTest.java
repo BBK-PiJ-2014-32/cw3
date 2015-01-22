@@ -185,4 +185,18 @@ public class ListTest {
 		boolean expected = true;
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void LinkedListSizeTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add("f");
+		int output = myLinkedList.size();
+		int expected = 6;
+		assertEquals(expected, output);
+	}
 }
