@@ -174,4 +174,15 @@ public class ListTest {
 		Object expected = "d";
 		assertEquals(expected, output);
 	}
+	
+	/**
+	 * Linked list empty test.
+	 */
+	@Test
+	public void LinkedListEmptyTest(){
+		List myLinkedList = new LinkedList();
+		boolean output = myLinkedList.isEmpty();
+		boolean expected = true;
+		assertEquals(expected, output);
+	}
 }
