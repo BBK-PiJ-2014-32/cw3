@@ -151,7 +151,7 @@ public class ListTest {
 		myLinkedList.add(2,"f");
 		ReturnObject returObj = myLinkedList.get(3); //check indexcount in list
 		Object output = returObj.getReturnValue();
-		Object expected = "b";
+		Object expected = "c";
 		assertEquals(expected, output);
 	}
 	
