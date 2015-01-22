@@ -138,6 +138,25 @@ public class ListTest {
 	}
 	
 	/**
+	 * Mid linked list add test.
+	 */
+	@Test
+	public void midLinkedListAddTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add(2,"f");
+		ReturnObject returObj = myLinkedList.get(3); //check indexcount in list
+		Object output = returObj.getReturnValue();
+		Object expected = "b";
+		assertEquals(expected, output);
+	}
+	
+	
+	/**
 	 * Linked list remove test.
 	 */
 	@Test
