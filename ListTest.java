@@ -136,4 +136,23 @@ public class ListTest {
 		Object expected = "e";
 		assertEquals(expected, output);
 	}
+	
+	/**
+	 * Linked list remove test.
+	 */
+	@Test
+	public void LinkedListRemoveTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add("f");
+		myLinkedList.remove(2);
+		ReturnObject returObj = myLinkedList.get(2);
+		Object output = returObj.getReturnValue();
+		Object expected = "d";
+		assertEquals(expected, output);
+	}
 }
