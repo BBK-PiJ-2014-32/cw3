@@ -186,6 +186,9 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Linked list size test.
+	 */
 	@Test
 	public void LinkedListSizeTest(){
 		List myLinkedList = new LinkedList();
