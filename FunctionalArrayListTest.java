@@ -6,7 +6,7 @@ import org.junit.Test;
 public class FunctionalArrayListTest {
 
 	/**
-	 * Head test.
+	 * Tests the head method.
 	 */
 	@Test
 	public void headTest() {
@@ -19,7 +19,7 @@ public class FunctionalArrayListTest {
 	}
 	
 	/**
-	 * Rest test.
+	 * Tests the rest method.
 	 */
 	@Test
 	public void restTest() {
@@ -31,7 +31,7 @@ public class FunctionalArrayListTest {
 		myArrayList.add("e");
 		FunctionalArrayList newArrayList = myArrayList.rest();
 		int output = newArrayList.size();
-		int expected = 5;
+		int expected = 4;
 		assertEquals(expected, output);
 	}
 
