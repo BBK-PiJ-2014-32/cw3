@@ -7,7 +7,11 @@ public class FunctionalArrayListTest {
 
 	@Test
 	public void headTest() {
-		List myArrayList = new FunctionalArrayList();
+		FunctionalArrayList myArrayList = new FunctionalArrayList();
+		myArrayList.add("A");
+		ReturnObject output = myArrayList.head();
+		ReturnObject expected = new ReturnObjectImpl("A", null);
+		assertEquals(expected, output);
 		
 	}
 
