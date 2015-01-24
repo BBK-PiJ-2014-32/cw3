@@ -14,6 +14,12 @@
  * @author PiJ
  */
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
+	
+	private Object[] myFuncArrayList;
+	
+		public FunctionalArrayList (){
+			this.myFuncArrayList = new Object[10];
+		}
     /**
      * Returns the element at the beginning of the list. 
      * 
@@ -24,7 +30,8 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     public ReturnObject head(){
     	if(listArray[0] != null){
-    		ReturnObject returnObj = new ReturnObjectImpl(listArray[0], ErrorMessage.NO_ERROR);
+    		myFuncArrayList = listArray;
+    		ReturnObject returnObj = new ReturnObjectImpl(myFuncArrayList[0], ErrorMessage.NO_ERROR);
 			return returnObj;
     	}else {
     		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
