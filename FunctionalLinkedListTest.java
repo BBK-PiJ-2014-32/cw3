@@ -18,4 +18,21 @@ public class FunctionalLinkedListTest {
 		assertEquals(expected, output);
 	}
 
+	/**
+	 * Tests the rest method.
+	 */
+	@Test
+	public void restTest() {
+		FunctionalLinkedList testLinkedList = new FunctionalLinkedList();
+		testLinkedList.add("a");
+		testLinkedList.add("b");
+		testLinkedList.add("c");
+		testLinkedList.add("d");
+		testLinkedList.add("e");
+		FunctionaLinkedList newLinkedList = testLinkedList.rest();
+		int output = newLinkedList.size();
+		int expected = 5;
+		assertEquals(expected, output);
+	}
+
 }
