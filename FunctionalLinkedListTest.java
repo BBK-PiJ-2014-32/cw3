@@ -29,7 +29,7 @@ public class FunctionalLinkedListTest {
 		testLinkedList.add("c");
 		testLinkedList.add("d");
 		testLinkedList.add("e");
-		FunctionaLinkedList newLinkedList = testLinkedList.rest();
+		FunctionalLinkedList newLinkedList = testLinkedList.rest();
 		int output = newLinkedList.size();
 		int expected = 5;
 		assertEquals(expected, output);

@@ -23,7 +23,7 @@
 public class LinkedList implements List {
 	
 	/** The first. */
-	private Node first;
+	protected Node first;
 
 	/** The temp node. */
 	private Node tempNode;

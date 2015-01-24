@@ -48,7 +48,6 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     public FunctionalArrayList rest(){
     	FunctionalArrayList returnList = new FunctionalArrayList();
-    	
     	if(this.isEmpty() == false){
     		for(int i = 0; i < this.size(); i++){
     			returnList.add(listArray[i+1]);

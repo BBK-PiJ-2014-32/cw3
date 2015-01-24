@@ -43,7 +43,17 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
      * 
      * If the list is empty, another empty list is returned. 
      */
-    public FunctionalList rest(){
-    	return null;
+    public FunctionalLinkedList rest(){
+    	FunctionalLinkedList returnList = new FunctionalLinkedList();
+    	if(this.isEmpty() == false){
+    		for(int i = 0; i < this.size(); i++){
+    			ReturnObject newListObj = get(i+1);
+    			Object item = newListObj.getReturnValue();
+    			returnList.add(item);
+    		}	
+    			return returnList;
+    	} else {
+    		return returnList;
+    	}
     }
 }
