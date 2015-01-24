@@ -4,6 +4,9 @@
  * @author PiJ
  */
 public class SampleableListImpl extends ArrayList implements SampleableList {
+	
+	private Object[] sampleList;
+	
 	/**
 	 * Returns a list containing the first, third, fifth...
 	 * items of this list, or an empty list if the list is empty. 
@@ -11,6 +14,14 @@ public class SampleableListImpl extends ArrayList implements SampleableList {
 	 * @return a list containing the first, third, fifth... items of this list
 	 */
 	public SampleableListImpl sample(){
-		return null;
+		SampleableListImpl returnList = new SampleableListImpl();
+    	if(this.isEmpty() == false){
+    		for(int i = 0; i < this.size(); i+=2){
+    			returnList.add(listArray[i]);
+    		}	
+    			return returnList;
+    	} else {
+    		return returnList;
+    	}
 	}
 }
