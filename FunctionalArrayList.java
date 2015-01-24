@@ -46,7 +46,15 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      * 
      * If the list is empty, another empty list is returned. 
      */
-    public FunctionalList rest(){
-    	return null;
+    public FunctionalArrayList rest(){
+    	FunctionalArrayList returnList = new FunctionalArrayList();
+    	if(isEmpty() == false){
+    		for(int i = 0; i < size(); i++){
+    			returnList.myFuncArrayList[i] = listArray[i+1];
+    		}	
+    			return returnList;
+    	} else {
+    		return returnList;
+    	}
     }
 }
