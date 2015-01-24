@@ -24,7 +24,7 @@
 public class ArrayList implements List {
 	
 	/** The list array. */
-	private Object[] listArray; 
+	protected Object[] listArray; 
 	
 	/** The index count. */
 	private int indexCount;
