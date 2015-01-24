@@ -14,6 +14,9 @@
  * @author PiJ
  */
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
+	
+	private Object FuncLinkedListObj;
+	
     /**
      * Returns the element at the beginning of the list. 
      * 
@@ -23,7 +26,14 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
      *         an error if the list is empty.
      */
     public ReturnObject head(){
-    	return null;
+    	if(this.first != null){
+    		FuncLinkedListObj = this.first.objectValue;
+    		ReturnObject returnObj = new ReturnObjectImpl(FuncLinkedListObj, ErrorMessage.NO_ERROR);
+			return returnObj;
+    	}else {
+    		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+    	}
     }
 
     /**
