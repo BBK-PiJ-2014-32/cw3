@@ -31,7 +31,7 @@ public class FunctionalLinkedListTest {
 		testLinkedList.add("e");
 		FunctionalLinkedList newLinkedList = testLinkedList.rest();
 		int output = newLinkedList.size();
-		int expected = 5;
+		int expected = 4;
 		assertEquals(expected, output);
 	}
 

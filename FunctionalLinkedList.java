@@ -46,8 +46,8 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
     public FunctionalLinkedList rest(){
     	FunctionalLinkedList returnList = new FunctionalLinkedList();
     	if(this.isEmpty() == false){
-    		for(int i = 0; i < this.size(); i++){
-    			ReturnObject newListObj = get(i+1);
+    		for(int i = 1; i < this.size(); i++){
+    			ReturnObject newListObj = this.get(i);
     			Object item = newListObj.getReturnValue();
     			returnList.add(item);
     		}	
