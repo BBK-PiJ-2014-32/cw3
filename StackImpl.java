@@ -12,27 +12,35 @@
  * 
  * @author PiJ
  */
-public class StackImpl implements AbstractStack {
-    /**
-     * The data structure where the elements on the stack are stored. 
-     */
-    protected List internalList{
-    	return null;
-    }
+public class StackImpl extends AbstractStack implements Stack {
+    
+	public StackImpl(List list){
+		super(list);
+	}
 
-    /**
-     * Creates a new abstract stack using the provided list as the
-     * underlying data structure.
-     * 
-     * Note: This constructor does not check whether the provided list
-     * is null. Programmers must do their own checks. If a null list
-     * is provided, a NullPointerException will be thrown at runtime
-     * as soon as any operation is attempted on the underlying list.
-     * 
-     * @param list the list to be used 
-     */
-    public AbstractStack(List list) {
-	  this.internalList = list;
-    }
+	@Override
+	public boolean isEmpty() {
+		return false;
+	}
+
+	@Override
+	public int size() {
+		return 0;
+	}
+
+	@Override
+	public void push(Object item) {
+		
+	}
+
+	@Override
+	public ReturnObject top() {
+		return null;
+	}
+
+	@Override
+	public ReturnObject pop() {
+		return null;
+	}
 }
 
