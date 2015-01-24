@@ -9,8 +9,9 @@ public class FunctionalArrayListTest {
 	public void headTest() {
 		FunctionalArrayList myArrayList = new FunctionalArrayList();
 		myArrayList.add("A");
-		ReturnObject output = myArrayList.head();
-		ReturnObject expected = new ReturnObjectImpl("A", null);
+		ReturnObject returnObj = myArrayList.head();
+		Object output = returnObj.getReturnValue();
+		Object expected = "A";
 		assertEquals(expected, output);
 		
 	}

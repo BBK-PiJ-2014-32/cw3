@@ -24,7 +24,8 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     public ReturnObject head(){
     	if(listArray[0] != null){
-    		
+    		ReturnObject returnObj = new ReturnObjectImpl(listArray[0], ErrorMessage.NO_ERROR);
+			return returnObj;
     	}else {
     		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
 			return returnObj;
