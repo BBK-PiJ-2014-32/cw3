@@ -23,7 +23,12 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      *         an error if the list is empty.
      */
     public ReturnObject head(){
-    	return null;
+    	if(listArray[0] != null){
+    		
+    	}else {
+    		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+    	}
     }
 
     /**
