@@ -20,7 +20,22 @@ public class ImprovedStackImplTest {
 		Object output = returnObj.getReturnValue();
 		Object expected = "a";
 		assertEquals(expected, output);
-		
+	}
+	
+	@Test
+	public void ImprovedStackImplRemoveTest(){
+		List testLinkedList = new LinkedList();
+		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
+		testStack.push("a");
+		testStack.push("b");
+		testStack.push("a");
+		testStack.push("d");
+		testStack.push("e");
+		testStack.push("a");
+		testStack.remove("a");
+		int output = testStack.size();
+		int expected = 3;
+		assertEquals(expected, output);
 	}
 	
 	

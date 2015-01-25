@@ -36,7 +36,7 @@ public class StackImplTest {
 		testStack.pop();
 		ReturnObject returObj = testStack.pop();
 		Object output = returObj.getReturnValue();
-		Object expected = "c";
+		Object expected = "";
 		assertEquals(expected, output);
 	}
 	

@@ -17,10 +17,12 @@
 public class ImprovedStackImpl implements ImprovedStack {
 	
 	private List internalList;
+	private List returnList;
 	private int stackSize;
 	
 	public ImprovedStackImpl(List list){
 		this.internalList = list;
+		this.returnList = returnList;
 		stackSize = 0;
 	}
 	
@@ -32,12 +34,11 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 * @return a copy of this stack with the items reversed. 
 	 */
 	public ImprovedStackImpl reverse(){
-		ImprovedStackImpl reverseStack = new ImprovedStackImpl(null);
+		returnList = internalList;
 		for(int i = (stackSize - 1); i >= 0; i--){
-			ReturnObject returnObj = internalList.get(i);
-			Object inputObj = returnObj.getReturnValue();
-			reverseStack.push(inputObj);
+			returnList.add(internalList.get(i).getReturnValue());
 		}
+		ImprovedStackImpl reverseStack = new ImprovedStackImpl(returnList);
 		return reverseStack;
 	}
 
