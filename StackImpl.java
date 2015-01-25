@@ -48,7 +48,7 @@ public class StackImpl extends AbstractStack implements Stack {
 
 	@Override
 	public ReturnObject pop() {
-		return null;
+		return internalList.remove(internalList.size() - 1);
 	}
 }
 

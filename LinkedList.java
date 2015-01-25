@@ -110,7 +110,7 @@ public class LinkedList implements List {
 			previous = current.getNode(index-1);
 			previous.next = current.next;
 			indexCount--;
-			ReturnObject removedObj = new ReturnObjectImpl(current, null);
+			ReturnObject removedObj = new ReturnObjectImpl(current.objectValue, null);
 			return removedObj;
 		} else {
 			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
