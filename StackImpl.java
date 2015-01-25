@@ -28,7 +28,7 @@ public class StackImpl extends AbstractStack implements Stack {
 
 	@Override
 	public int size() {
-		return 0;
+		return stackSize;
 	}
 
 	@Override
