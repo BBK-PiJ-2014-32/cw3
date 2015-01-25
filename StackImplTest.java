@@ -15,6 +15,10 @@ public class StackImplTest {
 		testStack.push("d");
 		testStack.push("e");
 		testStack.push("f");
+		ReturnObject returObj = testStack.top();
+		Object output = returObj.getReturnValue();
+		Object expected = "f";
+		assertEquals(expected, output);
 
 	}
 }
