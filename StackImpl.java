@@ -23,7 +23,7 @@ public class StackImpl extends AbstractStack implements Stack {
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return true;
 	}
 
 	@Override
