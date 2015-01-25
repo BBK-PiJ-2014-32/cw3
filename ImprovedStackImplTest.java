@@ -6,7 +6,26 @@ import org.junit.Test;
 public class ImprovedStackImplTest {
 
 	@Test
-	public void stackImplListPushTest(){
+	public void ImprovedStackImplReverseTest(){
+		List testLinkedList = new LinkedList();
+		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
+		testStack.push("a");
+		testStack.push("b");
+		testStack.push("c");
+		testStack.push("d");
+		testStack.push("e");
+		testStack.push("f");
+		testStack.reverse();
+		ReturnObject returnObj = testStack.top();
+		Object output = returnObj.getReturnValue();
+		Object expected = "a";
+		assertEquals(expected, output);
+		
+	}
+	
+	
+	@Test
+	public void ImprovedStackImplListPushTest(){
 		List testLinkedList = new LinkedList();
 		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
 		testStack.push("a");
@@ -22,7 +41,7 @@ public class ImprovedStackImplTest {
 	}
 	
 	@Test
-	public void stackImplListPopTest(){
+	public void ImprovedStackImplListPopTest(){
 		List testLinkedList = new LinkedList();
 		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
 		testStack.push("a");
@@ -41,7 +60,7 @@ public class ImprovedStackImplTest {
 	}
 	
 	@Test
-	public void stackImplListSizeTest(){
+	public void ImprovedStackImplListSizeTest(){
 		List testLinkedList = new LinkedList();
 		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
 		testStack.push("a");
@@ -56,7 +75,7 @@ public class ImprovedStackImplTest {
 	}
 	
 	@Test
-	public void stackImplListIsEmptyTest(){
+	public void ImprovedStackImplListIsEmptyTest(){
 		List testLinkedList = new LinkedList();
 		ImprovedStackImpl testStack = new ImprovedStackImpl(testLinkedList);
 		testStack.push("a");
