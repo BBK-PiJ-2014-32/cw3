@@ -30,12 +30,12 @@ public class StackImpl extends AbstractStack implements Stack {
 
 	@Override
 	public void push(Object item) {
-		
+		internalList.add(item);
 	}
 
 	@Override
 	public ReturnObject top() {
-		return null;
+		return internalList.get(internalList.size() - 1);
 	}
 
 	@Override
