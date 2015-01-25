@@ -14,8 +14,11 @@
  */
 public class StackImpl extends AbstractStack implements Stack {
     
+	private int stackSize;
+	
 	public StackImpl(List list){
 		super(list);
+		stackSize = 0;
 	}
 
 	@Override
@@ -31,6 +34,7 @@ public class StackImpl extends AbstractStack implements Stack {
 	@Override
 	public void push(Object item) {
 		internalList.add(item);
+		stackSize++;
 	}
 
 	@Override

@@ -21,4 +21,20 @@ public class StackImplTest {
 		assertEquals(expected, output);
 
 	}
+	
+	@Test
+	public void stackImplListSizeTest(){
+		List testLinkedList = new LinkedList();
+		StackImpl testStack = new StackImpl(testLinkedList);
+		testStack.push("a");
+		testStack.push("b");
+		testStack.push("c");
+		testStack.push("d");
+		testStack.push("e");
+		testStack.push("f");
+		int output = testStack.size();
+		int expected = 6;
+		assertEquals(expected, output);
+
+	}
 }
