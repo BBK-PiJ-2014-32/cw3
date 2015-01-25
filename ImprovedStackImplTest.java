@@ -3,8 +3,15 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ImprovedStackImplTest.
+ */
 public class ImprovedStackImplTest {
 
+	/**
+	 * ImprovedStackImpl reverse test.
+	 */
 	@Test
 	public void ImprovedStackImplReverseTest(){
 		List testLinkedList = new LinkedList();
@@ -22,6 +29,9 @@ public class ImprovedStackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * ImprovedStackImpl remove test.
+	 */
 	@Test
 	public void ImprovedStackImplRemoveTest(){
 		List testLinkedList = new LinkedList();
@@ -39,6 +49,9 @@ public class ImprovedStackImplTest {
 	}
 	
 	
+	/**
+	 * ImprovedStackImpl list push test.
+	 */
 	@Test
 	public void ImprovedStackImplListPushTest(){
 		List testLinkedList = new LinkedList();
@@ -55,6 +68,9 @@ public class ImprovedStackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * ImprovedStackImpl list pop test.
+	 */
 	@Test
 	public void ImprovedStackImplListPopTest(){
 		List testLinkedList = new LinkedList();
@@ -74,6 +90,9 @@ public class ImprovedStackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * ImprovedStackImpl list size test.
+	 */
 	@Test
 	public void ImprovedStackImplListSizeTest(){
 		List testLinkedList = new LinkedList();
@@ -89,6 +108,9 @@ public class ImprovedStackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * ImprovedStackImpl list is empty test.
+	 */
 	@Test
 	public void ImprovedStackImplListIsEmptyTest(){
 		List testLinkedList = new LinkedList();

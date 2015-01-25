@@ -5,7 +5,6 @@
  */
 public class SampleableListImpl extends ArrayList implements SampleableList {
 	
-	private ArrayList sampleList;
 	
 	/**
 	 * Returns a list containing the first, third, fifth...
