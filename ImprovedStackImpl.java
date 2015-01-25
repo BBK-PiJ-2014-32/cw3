@@ -49,27 +49,32 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		if(internalList.size() == 0){
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@Override
 	public int size() {
-		return 0;
+		return internalList.size();
 	}
 
 	@Override
 	public void push(Object item) {
-		
+		internalList.add(item);
 	}
 
 	@Override
 	public ReturnObject top() {
-		return null;
+		return internalList.get(internalList.size() - 1);
 	}
 
 	@Override
 	public ReturnObject pop() {
-		return null;
+		return internalList.remove(internalList.size() - 1);
 	}
 }
+
 
