@@ -22,6 +22,25 @@ public class StackImplTest {
 	}
 	
 	@Test
+	public void stackImplListPopTest(){
+		List testLinkedList = new LinkedList();
+		StackImpl testStack = new StackImpl(testLinkedList);
+		testStack.push("a");
+		testStack.push("b");
+		testStack.push("c");
+		testStack.push("d");
+		testStack.push("e");
+		testStack.push("f");
+		testStack.pop();
+		testStack.pop();
+		testStack.pop();
+		ReturnObject returObj = testStack.pop();
+		Object output = returObj.getReturnValue();
+		Object expected = "c";
+		assertEquals(expected, output);
+	}
+	
+	@Test
 	public void stackImplListSizeTest(){
 		List testLinkedList = new LinkedList();
 		StackImpl testStack = new StackImpl(testLinkedList);
