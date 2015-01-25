@@ -17,10 +17,11 @@
 public class ImprovedStackImpl implements ImprovedStack {
 	
 	private List internalList;
+	private int stackSize;
 	
 	public ImprovedStackImpl(List list){
 		this.internalList = list;
-		
+		stackSize = 0;
 	}
 	
 	/**
@@ -30,8 +31,14 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 * 
 	 * @return a copy of this stack with the items reversed. 
 	 */
-	public ImprovedStack reverse(){
-		return null;
+	public ImprovedStackImpl reverse(){
+		ImprovedStackImpl reverseStack = new ImprovedStackImpl(null);
+		for(int i = (stackSize - 1); i >= 0; i--){
+			ReturnObject returnObj = internalList.get(i);
+			Object inputObj = returnObj.getReturnValue();
+			reverseStack.push(inputObj);
+		}
+		return reverseStack;
 	}
 
 	/**
@@ -58,12 +65,13 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	@Override
 	public int size() {
-		return internalList.size();
+		return stackSize;
 	}
 
 	@Override
 	public void push(Object item) {
 		internalList.add(item);
+		stackSize++;
 	}
 
 	@Override
@@ -73,7 +81,10 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	@Override
 	public ReturnObject pop() {
-		return internalList.remove(internalList.size() - 1);
+		ReturnObject returnObj = internalList.remove(internalList.size() - 1);
+		stackSize--;
+		return returnObj;
+		
 	}
 }
 
