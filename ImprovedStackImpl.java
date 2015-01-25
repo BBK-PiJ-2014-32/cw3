@@ -19,10 +19,12 @@ public class ImprovedStackImpl implements ImprovedStack {
 	private List internalList;
 	private List returnList;
 	private int stackSize;
+	private int itemsRemoved;
 	
 	public ImprovedStackImpl(List list){
 		this.internalList = list;
 		stackSize = 0;
+		itemsRemoved = 0;
 	}
 	
 	/**
@@ -51,15 +53,12 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 * @param object the object to remove
 	 */
 	public void remove(Object object){
-		for(int i = 0; i < internalList.size(); i++){
+		for(int i = 0; i <= internalList.size(); i++){
 			if(internalList.get(i).getReturnValue().equals(object)){
 				internalList.remove(i);
-				stackSize--;
-			} else {
-				internalList.remove(i);
+				itemsRemoved++;
 			}
-		} 
-		
+		} stackSize = stackSize - itemsRemoved;
 	}
 
 	@Override

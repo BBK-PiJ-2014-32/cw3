@@ -195,6 +195,7 @@ public class LinkedList implements List {
 			return nullMessage;
  			}
 		}
+	
 
 	/**
 	 * The Class Node.
