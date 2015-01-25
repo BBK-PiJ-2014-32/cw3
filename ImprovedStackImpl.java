@@ -16,8 +16,11 @@
  */
 public class ImprovedStackImpl implements ImprovedStack {
 	
-	public ImprovedStackImpl(){
-
+	private List internalList;
+	
+	public ImprovedStackImpl(List list){
+		this.internalList = list;
+		
 	}
 	
 	/**
@@ -42,6 +45,31 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 */
 	public void remove(Object object){
 		
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return false;
+	}
+
+	@Override
+	public int size() {
+		return 0;
+	}
+
+	@Override
+	public void push(Object item) {
+		
+	}
+
+	@Override
+	public ReturnObject top() {
+		return null;
+	}
+
+	@Override
+	public ReturnObject pop() {
+		return null;
 	}
 }
 
