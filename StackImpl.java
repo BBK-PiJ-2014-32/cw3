@@ -1,26 +1,27 @@
+// TODO: Auto-generated Javadoc
 /**
- * An implementation of a stack that uses a {@List} as the underlying
- * data structure.
+ * CLass that extends AbstractStack and implements the methods of stack.
  * 
- * Not all operations on a stack will always be successful. For
- * example, a programmer may try to pop an element from an empty
- * stack. Since we hace not covered exceptions yet, we need another
- * mechanism to report errors. In order to do that, methods of this
- * list will return a {@see ReturnObject} that will contain either an
- * object or an error value of the right kind (as defined in {@see
- * ErrorMessage}).
- * 
- * @author PiJ
+ * @author P Hannant
  */
 public class StackImpl extends AbstractStack implements Stack {
     
+	/** The stack size. */
 	private int stackSize;
 	
+	/**
+	 * Instantiates a new stack impl.
+	 *
+	 * @param list the list
+	 */
 	public StackImpl(List list){
 		super(list);
 		stackSize = 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see Stack#isEmpty()
+	 */
 	@Override
 	public boolean isEmpty() {
 		if(stackSize == 0){
@@ -30,22 +31,34 @@ public class StackImpl extends AbstractStack implements Stack {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see Stack#size()
+	 */
 	@Override
 	public int size() {
 		return stackSize;
 	}
 
+	/* (non-Javadoc)
+	 * @see Stack#push(java.lang.Object)
+	 */
 	@Override
 	public void push(Object item) {
 		internalList.add(item);
 		stackSize++;
 	}
 
+	/* (non-Javadoc)
+	 * @see Stack#top()
+	 */
 	@Override
 	public ReturnObject top() {
 		return internalList.get(internalList.size() - 1);
 	}
 
+	/* (non-Javadoc)
+	 * @see Stack#pop()
+	 */
 	@Override
 	public ReturnObject pop() {
 		ReturnObject returnObj = internalList.remove(internalList.size() - 1);
