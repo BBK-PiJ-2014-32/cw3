@@ -8,12 +8,12 @@ public class LinkedListTest {
 		testList.add(3);
 		testList.add(4);
 		testList.add(null);
-		ReturnObject newErr = new ReturnObjectImpl(testList.add(null), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		ReturnObject newErr = new ReturnObjectImpl(testList.add(null));
 		ErrorMessage errorOut = newErr.getError();
 		System.out.println(errorOut);
 		int x = testList.size();
 		System.out.println("size = " + x);
-		ReturnObject newObj = new ReturnObjectImpl(testList.get(3), null);
+		ReturnObject newObj = new ReturnObjectImpl(testList.get(3));
 		Object obj = newObj.getReturnValue();
 		System.out.println(obj);
 		Object newNode = new Object();

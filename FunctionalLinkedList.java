@@ -28,10 +28,10 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
     public ReturnObject head(){
     	if(this.first != null){
     		FuncLinkedListObj = this.first.objectValue;
-    		ReturnObject returnObj = new ReturnObjectImpl(FuncLinkedListObj, ErrorMessage.NO_ERROR);
+    		ReturnObject returnObj = new ReturnObjectImpl(FuncLinkedListObj);
 			return returnObj;
     	}else {
-    		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
+    		ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return returnObj;
     	}
     }

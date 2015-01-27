@@ -8,7 +8,7 @@ public class ReturnObjectImpl implements ReturnObject {
 	private Object returnObject;
 	private ErrorMessage error;
 	
-	public ReturnObjectImpl(Object object, ErrorMessage error){
+	public ReturnObjectImpl(Object object){
 		this.returnObject = object;
 		this.error = error;
 	}

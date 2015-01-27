@@ -78,14 +78,14 @@ public class LinkedList implements List {
 	 */
 	public ReturnObject get(int index){
 		if(index < 0 || index - 1 > indexCount){
-			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObj;
 		} else {
 		Node thisNode = first;
 			for(int i = 0; i < index; i++){;
 				thisNode = thisNode.next;
 			} 
-		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue, ErrorMessage.NO_ERROR);
+		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue);
 		return returnObj;
 		}
 		
@@ -110,10 +110,10 @@ public class LinkedList implements List {
 			previous = current.getNode(index-1);
 			previous.next = current.next;
 			indexCount--;
-			ReturnObject removedObj = new ReturnObjectImpl(current.objectValue, null);
+			ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
 			return removedObj;
 		} else {
-			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return outOfBoundsMessage;
 		}
 	}
@@ -146,13 +146,13 @@ public class LinkedList implements List {
 				current.next = new Node(item);
 				current.next.next = tempNode;
 				indexCount++;
-				return new ReturnObjectImpl(null, null);
+				return new ReturnObjectImpl(null);
 			} else {
-				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return outOfBoundsMessage;
 			}
  		} else {
- 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+ 			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
  			} 
 		}
@@ -177,7 +177,7 @@ public class LinkedList implements List {
 				tempNode = new Node(item);
 				first = tempNode;
 				indexCount++;
-				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
 				if(first.next == null){
@@ -191,7 +191,7 @@ public class LinkedList implements List {
 			 return null;
 			}
  		} else {
- 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+ 			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
  			}
 		}

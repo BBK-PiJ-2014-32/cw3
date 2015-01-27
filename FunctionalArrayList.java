@@ -31,10 +31,10 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
     public ReturnObject head(){
     	if(listArray[0] != null){
     		myFuncArrayList = listArray;
-    		ReturnObject returnObj = new ReturnObjectImpl(myFuncArrayList[0], ErrorMessage.NO_ERROR);
+    		ReturnObject returnObj = new ReturnObjectImpl(myFuncArrayList[0]);
 			return returnObj;
     	}else {
-    		ReturnObject returnObj = new ReturnObjectImpl(null, ErrorMessage.EMPTY_STRUCTURE);
+    		ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return returnObj;
     	}
     }

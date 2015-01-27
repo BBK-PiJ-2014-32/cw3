@@ -71,10 +71,10 @@ public class ArrayList implements List {
 	 */
 	public ReturnObject get(int index){
 		if(index < 0 || index - 1 > indexCount){
-			ReturnObject errorObj = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObj;
 		} else {
-			ReturnObject returnObj = new ReturnObjectImpl(listArray[index], ErrorMessage.NO_ERROR);
+			ReturnObject returnObj = new ReturnObjectImpl(listArray[index]);
 			return returnObj;
 		}
 	}
@@ -95,10 +95,10 @@ public class ArrayList implements List {
 		if(index > 0 || index < indexCount){
 			arrayCopierRemove(index);
 			listArray[indexCount] = null; 
-			ReturnObject removedObj = new ReturnObjectImpl(null, null);
+			ReturnObject removedObj = new ReturnObjectImpl(null);
 			return removedObj;
 		} else {
-			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return outOfBoundsMessage;
 		}
 	}
@@ -128,13 +128,13 @@ public class ArrayList implements List {
 				arrayCopierAdd(index);
 				listArray[index] = item;
 				indexCount++;
-				return new ReturnObjectImpl(null, null);
+				return new ReturnObjectImpl(null);
 			} else {
-				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(null, ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return outOfBoundsMessage;
 			}
 		} else {
-			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
 		}
 	}
@@ -156,16 +156,16 @@ public class ArrayList implements List {
 			if (listArray[0] == null){
 				listArray[0] = item;
 				indexCount++;
-				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
 				listArray[indexCount] = item;
 				indexCount++;
-				ReturnObject emptyObj = new ReturnObjectImpl(null, ErrorMessage.NO_ERROR);
+				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 				}
  		} else {
- 			ReturnObject nullMessage = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+ 			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
  			}
 	}
