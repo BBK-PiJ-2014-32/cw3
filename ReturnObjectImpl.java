@@ -9,15 +9,19 @@ public class ReturnObjectImpl implements ReturnObject {
 	private ErrorMessage error;
 	
 	public ReturnObjectImpl(Object object){
-		this.returnObject = object;
-		this.error = error;
-	}
+		if(object == ErrorMessage.EMPTY_STRUCTURE || object == ErrorMessage.INDEX_OUT_OF_BOUNDS || object == ErrorMessage.INVALID_ARGUMENT){
+			this.error = (ErrorMessage) object;
+		} else {
+			this.returnObject = object;
+			this.error = ErrorMessage.NO_ERROR;
+		}
+		}
 	/**
 	 * Returns whether there has been an error
 	 * @return whether there has been an error
 	 */
 	public boolean hasError(){
-		if (error == null || error == ErrorMessage.NO_ERROR){
+		if (error == ErrorMessage.NO_ERROR){
 			return false;
 		} else {
 			return true;

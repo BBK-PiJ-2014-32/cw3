@@ -205,7 +205,7 @@ public class ListTest {
 	@Test
 	public void LinkedListEmptyErrorTest(){
 		List myLinkedList = new LinkedList();
-		ReturnObject returObj = myLinkedList.add(null);
+		ReturnObject returObj = myLinkedList.get(0);
 		ErrorMessage output = returObj.getError();
 		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
 		assertEquals(expected, output);

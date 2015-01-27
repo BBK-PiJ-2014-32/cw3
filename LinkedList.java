@@ -77,18 +77,22 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(index < 0 || index - 1 > indexCount){
-			ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObj;
+		if(first != null){
+			if(index < 0 || index - 1 > indexCount){
+				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				return errorObj;
+			} else {
+				Node thisNode = first;
+				for(int i = 0; i < index; i++){;
+					thisNode = thisNode.next;
+				} 
+				ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue);
+				return returnObj;
+			}
 		} else {
-		Node thisNode = first;
-			for(int i = 0; i < index; i++){;
-				thisNode = thisNode.next;
-			} 
-		ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue);
-		return returnObj;
+			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return emptyStructureError;
 		}
-		
 	}
 
 	/**
