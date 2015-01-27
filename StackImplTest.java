@@ -4,7 +4,7 @@ import org.junit.Test;
 
 
 /**
- * The Class StackImplTest, tests all of the functions of the stack implementation.
+ * JUnit test class for the StackImpl class.
  */
 public class StackImplTest {
 
