@@ -3,8 +3,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+/**
+ * JUnit test class for the SampleableListImpl class..
+ */
 public class SampleableListImplTest {
 
+	/**
+	 * Sample test.
+	 */
 	@Test
 	public void sampleTest() {
 		SampleableListImpl testSampleList = new SampleableListImpl();
