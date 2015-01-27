@@ -3,6 +3,9 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+/**
+ * JUnit test Class for the FunctionalLinkedList Class.
+ */
 public class FunctionalLinkedListTest {
 
 	/**
