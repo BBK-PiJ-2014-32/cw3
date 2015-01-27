@@ -3,8 +3,14 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+/**
+ * The Class StackImplTest, tests all of the functions of the stack implementation.
+ */
 public class StackImplTest {
 
+	/**
+	 * Stack impl list push test.
+	 */
 	@Test
 	public void stackImplListPushTest(){
 		List testLinkedList = new LinkedList();
@@ -21,6 +27,9 @@ public class StackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Stack impl list pop test.
+	 */
 	@Test
 	public void stackImplListPopTest(){
 		List testLinkedList = new LinkedList();
@@ -40,6 +49,9 @@ public class StackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Stack impl list size test.
+	 */
 	@Test
 	public void stackImplListSizeTest(){
 		List testLinkedList = new LinkedList();
@@ -55,6 +67,9 @@ public class StackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Stack impl list is empty test.
+	 */
 	@Test
 	public void stackImplListIsEmptyTest(){
 		List testLinkedList = new LinkedList();
