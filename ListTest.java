@@ -201,4 +201,13 @@ public class ListTest {
 		int expected = 6;
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void LinkedListEmptyErrorTest(){
+		List myLinkedList = new LinkedList();
+		ReturnObject returObj = myLinkedList.add(null);
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		assertEquals(expected, output);
+	}
 }
