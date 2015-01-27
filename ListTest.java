@@ -3,9 +3,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ListTest.
+ * JUnit test Class for both the LinkedList and ArrayList classes.
  */
 public class ListTest {
 
@@ -23,7 +22,7 @@ public class ListTest {
 	}
 
 	/**
-	 * Array list multpile add and get single test.
+	 * Array list multiple add and get single test.
 	 */
 	@Test
 	public void arrayListMultpileAddGetTest(){
