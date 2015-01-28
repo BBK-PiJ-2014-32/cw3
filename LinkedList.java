@@ -108,17 +108,22 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		if(index > 0 || index < indexCount){
-			Node current = new Node(null);
-			current = current.getNode(index);
-			previous = current.getNode(index-1);
-			previous.next = current.next;
-			indexCount--;
-			ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
-			return removedObj;
+		if(first != null){
+			if(index > 0 || index < indexCount){
+				Node current = new Node(null);
+				current = current.getNode(index);
+				previous = current.getNode(index-1);
+				previous.next = current.next;
+				indexCount--;
+				ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
+				return removedObj;
+			} else {
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				return outOfBoundsMessage;
+			}
 		} else {
-			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return outOfBoundsMessage;
+			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return emptyStructureError;
 		}
 	}
 
