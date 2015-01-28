@@ -13,14 +13,15 @@ public class SampleableListImpl extends ArrayList implements SampleableList {
 	 * @return a list containing the first, third, fifth... items of this list
 	 */
 	public SampleableListImpl sample(){
+		if (this.isEmpty() == false){
 		SampleableListImpl returnList = new SampleableListImpl();
-    	if(this.isEmpty() == false){
     		for(int i = 0; i < this.size(); i+=2){
-    			returnList.add(listArray[i]);
+    		returnList.add(listArray[i]);
     		}	
-    			return returnList;
-    	} else {
     		return returnList;
+    	} else {
+    		System.out.println(ErrorMessage.EMPTY_STRUCTURE);//type mismatch so error printed instead
+    		return null;
     	}
 	}
 }
