@@ -70,7 +70,7 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(listArray[0] != null){	
+		if(this.isEmpty() == false){	
 			if(index < 0 || index - 1 > indexCount){
 				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return errorObj;
@@ -97,7 +97,7 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		if (listArray[0] != null){	
+		if (this.isEmpty() == false){	
 			if(index > 0 || index < indexCount){
 				arrayCopierRemove(index);
 				listArray[indexCount] = null; 

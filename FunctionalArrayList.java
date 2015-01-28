@@ -29,7 +29,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      *         an error if the list is empty.
      */
     public ReturnObject head(){
-    	if(listArray[0] != null){
+    	if(this.isEmpty() == false){
     		myFuncArrayList = listArray;
     		ReturnObject returnObj = new ReturnObjectImpl(myFuncArrayList[0]);
 			return returnObj;
