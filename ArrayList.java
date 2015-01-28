@@ -97,14 +97,19 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		if(index > 0 || index < indexCount){
-			arrayCopierRemove(index);
-			listArray[indexCount] = null; 
-			ReturnObject removedObj = new ReturnObjectImpl(null);
-			return removedObj;
+		if (listArray[0] != null){	
+			if(index > 0 || index < indexCount){
+				arrayCopierRemove(index);
+				listArray[indexCount] = null; 
+				ReturnObject removedObj = new ReturnObjectImpl(null);
+				return removedObj;
+			} else {
+				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				return outOfBoundsMessage;
+			}
 		} else {
-			ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return outOfBoundsMessage;
+			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return emptyStructureError;
 		}
 	}
 
