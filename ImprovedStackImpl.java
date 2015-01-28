@@ -35,12 +35,17 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 * @return a copy of this stack with the items reversed. 
 	 */
 	public ImprovedStackImpl reverse(){
-		returnList = internalList;
-		for(int i = (stackSize - 1); i >= 0; i--){
-			returnList.add(internalList.get(i).getReturnValue());
+		if(internalList.isEmpty() == false){	
+			returnList = internalList;
+			for(int i = (stackSize - 1); i >= 0; i--){
+				returnList.add(internalList.get(i).getReturnValue());
+			}
+			ImprovedStackImpl reverseStack = new ImprovedStackImpl(returnList);
+			return reverseStack;
+		} else {
+			System.out.println(ErrorMessage.EMPTY_STRUCTURE);//type mismatch so error printed instead
+			return null;
 		}
-		ImprovedStackImpl reverseStack = new ImprovedStackImpl(returnList);
-		return reverseStack;
 	}
 
 	/**
@@ -53,12 +58,16 @@ public class ImprovedStackImpl implements ImprovedStack {
 	 * @param object the object to remove
 	 */
 	public void remove(Object object){
-		for(int i = 0; i <= internalList.size(); i++){
-			if(internalList.get(i).getReturnValue().equals(object)){
-				internalList.remove(i);
-				itemsRemoved++;
-			}
-		} stackSize = stackSize - itemsRemoved;
+		if(internalList.isEmpty() == false){
+			for(int i = 0; i <= internalList.size(); i++){
+				if(internalList.get(i).getReturnValue().equals(object)){
+					internalList.remove(i);
+					itemsRemoved++;
+				}	
+			} stackSize = stackSize - itemsRemoved;
+		} else {
+			System.out.println(ErrorMessage.EMPTY_STRUCTURE);//void method so error printed instead
+		}
 	}
 
 	@Override
@@ -88,10 +97,14 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	@Override
 	public ReturnObject pop() {
-		ReturnObject returnObj = internalList.remove(internalList.size() - 1);
-		stackSize--;
-		return returnObj;
-		
+		if(internalList.isEmpty() == false){
+			ReturnObject returnObj = internalList.remove(internalList.size() - 1);
+			stackSize--;
+			return returnObj;
+		} else {
+			ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+		}
 	}
 }
 
