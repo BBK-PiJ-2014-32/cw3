@@ -92,7 +92,12 @@ public class ImprovedStackImpl implements ImprovedStack {
 
 	@Override
 	public ReturnObject top() {
-		return internalList.get(internalList.size() - 1);
+		if(internalList.isEmpty() == false){
+			return internalList.get(internalList.size() - 1);
+		} else {
+			ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+		}
 	}
 
 	@Override
