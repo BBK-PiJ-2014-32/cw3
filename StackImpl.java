@@ -53,7 +53,12 @@ public class StackImpl extends AbstractStack implements Stack {
 	 */
 	@Override
 	public ReturnObject top() {
-		return internalList.get(internalList.size() - 1);
+		if(internalList.isEmpty() == false){
+			return internalList.get(internalList.size() - 1);
+		} else {
+			ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -61,9 +66,14 @@ public class StackImpl extends AbstractStack implements Stack {
 	 */
 	@Override
 	public ReturnObject pop() {
-		ReturnObject returnObj = internalList.remove(internalList.size() - 1);
-		stackSize--;
-		return returnObj;
+		if(internalList.isEmpty() == false){
+			ReturnObject returnObj = internalList.remove(internalList.size() - 1);
+			stackSize--;
+			return returnObj;
+		} else {
+			ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
+		}
 	}
 }
 
