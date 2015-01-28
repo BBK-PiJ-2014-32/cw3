@@ -77,7 +77,7 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(first != null){
+		if(this.isEmpty() == false){
 			if(index < 0 || index - 1 > indexCount){
 				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return errorObj;
@@ -108,7 +108,7 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		if(first != null){
+		if(this.isEmpty() == false){
 			if(index > 0 || index < indexCount){
 				Node current = new Node(null);
 				current = current.getNode(index);
