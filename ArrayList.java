@@ -202,7 +202,7 @@ public class ArrayList implements List {
 		}
 	}
 	
-	public boolean isArrayFull(){
+	protected boolean isArrayFull(){
 		if(Count == listArray.length){
 			return true;
 		} else{
