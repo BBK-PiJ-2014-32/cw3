@@ -138,8 +138,8 @@ public class ListTest {
 		myArrayList.add("k");
 		myArrayList.add("l");
 		myArrayList.add("m");
-		boolean output = ((ArrayList) myArrayList).isArrayFull();
-		boolean expected = true;
+		int output = myArrayList.size();
+		int expected = 13;
 		assertEquals(expected, output);
 	}
 	
