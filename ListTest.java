@@ -143,6 +143,16 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	@Test
+	public void arrayListNullErrorTest() {
+		List myArrayList = new ArrayList();
+		ReturnObject returObj = myArrayList.add(null);
+		Object output = returObj.getError();
+		Object expected = ErrorMessage.INVALID_ARGUMENT;
+		assertEquals(expected, output);
+	}
+	
+	
 	/**
 	 * Linked list test.
 	 */
