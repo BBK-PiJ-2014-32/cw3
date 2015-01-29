@@ -27,14 +27,14 @@ public class ArrayList implements List {
 	protected Object[] listArray; 
 	
 	/** The index count. */
-	private int indexCount;
+	private int Count;
 	
 	/**
 	 * Instantiates a new array list.
 	 */
 	public ArrayList(){
 		this.listArray = new Object[10];
-		indexCount = 0;
+		Count = 0;
 	}
 	
 	/**
@@ -56,7 +56,7 @@ public class ArrayList implements List {
 	 * @return the number of items currently in the list
 	 */
 	public int size(){
-		return indexCount;
+		return Count;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class ArrayList implements List {
 	 */
 	public ReturnObject get(int index){
 		if(this.isEmpty() == false){	
-			if(index < 0 || index - 1 > indexCount){
+			if(index < 0 || index - 1 > Count){
 				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return errorObj;
 			} else {
@@ -98,10 +98,10 @@ public class ArrayList implements List {
 	 */
 	public ReturnObject remove(int index){
 		if (this.isEmpty() == false){	
-			if(index > 0 || index < indexCount){
+			if(index > 0 || index < Count){
+				ReturnObject removedObj = new ReturnObjectImpl(listArray[index]);
 				arrayCopierRemove(index);
-				listArray[indexCount] = null; 
-				ReturnObject removedObj = new ReturnObjectImpl(null);
+				Count--;
 				return removedObj;
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -134,10 +134,10 @@ public class ArrayList implements List {
 	public ReturnObject add(int index, Object item){
 		//checks if item is null or not
 		if(item != null){  
-			if(index > 0 || index < indexCount){
+			if(index > 0 || index < Count){
 				arrayCopierAdd(index);
 				listArray[index] = item;
-				indexCount++;
+				Count++;
 				return new ReturnObjectImpl(null);
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -165,12 +165,12 @@ public class ArrayList implements List {
 			//checks whether first node is null
 			if (listArray[0] == null){
 				listArray[0] = item;
-				indexCount++;
+				Count++;
 				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
-				listArray[indexCount] = item;
-				indexCount++;
+				listArray[Count] = item;
+				Count++;
 				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 				}
@@ -186,7 +186,7 @@ public class ArrayList implements List {
 	 * @param index the index
 	 */
 	public void arrayCopierRemove(int index){
-		for(int i = index; i < indexCount; i++){
+		for(int i = index; i < Count; i++){
 			listArray[i] = listArray[(i+1)];
 		}
 	}
@@ -197,9 +197,13 @@ public class ArrayList implements List {
 	 * @param index the index
 	 */
 	public void arrayCopierAdd(int index){
-		for(int i = index; i < indexCount; i++){
+		for(int i = index; i < Count; i++){
 			listArray[(i+1)] = listArray[i];
 		}
+	}
+	
+	public boolean isArrayFull(){
+		return false;
 	}
 }
 

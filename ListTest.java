@@ -51,10 +51,9 @@ public class ListTest {
 		myArrayList.add("d");
 		myArrayList.add("e");
 		myArrayList.add("f");
-		myArrayList.remove(2);
-		ReturnObject returObj = myArrayList.get(2);
+		ReturnObject returObj = myArrayList.remove(2);
 		Object output = returObj.getReturnValue();
-		Object expected = "d";
+		Object expected = "c";
 		assertEquals(expected, output);
 	}
 	
