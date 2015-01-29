@@ -122,6 +122,27 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
+	@Test
+	public void arrayLisSizeIncreaseTest(){
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		myArrayList.add("g");
+		myArrayList.add("h");
+		myArrayList.add("i");
+		myArrayList.add("j");
+		myArrayList.add("k");
+		myArrayList.add("l");
+		myArrayList.add("m");
+		boolean output = ((ArrayList) myArrayList).isArrayFull();
+		boolean expected = true;
+		assertEquals(expected, output);
+	}
+	
 	/**
 	 * Linked list test.
 	 */

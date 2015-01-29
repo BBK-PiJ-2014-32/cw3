@@ -26,6 +26,8 @@ public class ArrayList implements List {
 	/** The list array. */
 	protected Object[] listArray; 
 	
+	protected Object[] tempArray;
+	
 	/** The index count. */
 	private int Count;
 	
@@ -169,16 +171,24 @@ public class ArrayList implements List {
 				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 				return emptyObj;
 			}else {
-				listArray[Count] = item;
-				Count++;
-				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
-				return emptyObj;
+					if(isArrayFull() == true){
+						increaseArraySize();
+						listArray[Count] = item;
+						Count++;	
+						ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
+						return emptyObj;
+					} else {
+						listArray[Count] = item;
+						Count++;	
+						ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
+						return emptyObj;
 				}
+			}
  		} else {
  			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullMessage;
  			}
-	}
+		}	
 	
 	/**
 	 * Array copier remove.
@@ -209,5 +219,12 @@ public class ArrayList implements List {
 			return false;
 		}
 	}
+	
+	public void increaseArraySize(){
+			tempArray = listArray;
+			listArray = new Object[Count * 2];
+			listArray = tempArray;
+		} 
+
 }
 
