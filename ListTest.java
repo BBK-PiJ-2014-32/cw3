@@ -346,17 +346,18 @@ public class ListTest {
 		myLinkedList.remove(0);
 		myLinkedList.remove(0);
 		myLinkedList.remove(0);
-		//myLinkedList.remove(0);
-	//	myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
 		ReturnObject returObj = myLinkedList.get(2);
-		//ErrorMessage output = returObj.getError();
-		//ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
 		//int output = myLinkedList.size();
 		//int expected = 6;
 		//boolean output = myLinkedList.isEmpty();
 		//boolean expected = true;
-		Object output = returObj.getReturnValue();
-		Object expected = "f";
+		//Object output = returObj.getReturnValue();
+		//Object expected = "e";
 		assertEquals(expected, output);
 	}
 }

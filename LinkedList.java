@@ -112,9 +112,10 @@ public class LinkedList implements List {
 				return removedObj;
 			} else {
 				Node current = new Node(null);
-				current = current.getNode(index);
+				//current = current.getNode(index);
+				//current.next = current.next.next;
 				previous = current.getNode(index-1);
-				previous.next = current.next;
+				previous.next = previous.next.next;
 				Count--;
 				ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
 				return removedObj;
