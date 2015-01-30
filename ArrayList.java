@@ -229,9 +229,7 @@ public class ArrayList implements List {
 			} 
 	
 	private ReturnObjectImpl errorChecker(int index){
-		if(this == null){
-			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-		} else if (index < 0 || index >= Count){
+		if (index < 0 || index >= Count){
 			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else if (this.isEmpty() == true){
 			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
