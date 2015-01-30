@@ -135,20 +135,15 @@ public class ArrayList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(int index, Object item){
+		ReturnObject returnObj = errorChecker(item, index);
 		//checks if item is null or not
-		if(item != null){  
-			if(index > 0 || index < Count){
-				arrayCopierAdd(index);
-				listArray[index] = item;
-				Count++;
-				return new ReturnObjectImpl(null);
-			} else {
-				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				return outOfBoundsMessage;
-			}
+		if(returnObj.hasError() != true){  
+			arrayCopierAdd(index);
+			listArray[index] = item;
+			Count++;
+			return new ReturnObjectImpl(null);
 		} else {
-			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return nullMessage;
+			return returnObj;
 		}
 	}
 
@@ -235,7 +230,7 @@ public class ArrayList implements List {
 				listArray[i] = tempArray[i];
 				}
 			} 
-	private ReturnObjectImpl errorhecker(Object item, int index){
+	private ReturnObjectImpl errorChecker(Object item, int index){
 		if(item == null){
 			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		} else if (index < 0 || index >= Count){
