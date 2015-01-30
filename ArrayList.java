@@ -238,7 +238,17 @@ public class ArrayList implements List {
 				listArray[i] = tempArray[i];
 				}
 			} 
-
+	private ReturnObjectImpl errorhecker(int index){
+		if(this == null){
+			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+		} else if (index < 0 || index >= Count){
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+		} else if (this.isEmpty() == true){
+			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		} else {
+			return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
+		}
+	}
 	
 }
 
