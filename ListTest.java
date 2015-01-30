@@ -161,10 +161,10 @@ public class ListTest {
 		myArrayList.add("m");
 		myArrayList.remove(4);
 		myArrayList.add(5, "new");
-		//myArrayList.remove(11);
-		ReturnObject returObj = myArrayList.get(11);
+		myArrayList.remove(11);
+		ReturnObject returObj = myArrayList.get(10);
 		Object output = returObj.getReturnValue();
-		Object expected = "l";
+		Object expected = "m";
 		assertEquals(expected, output);
 	}
 	

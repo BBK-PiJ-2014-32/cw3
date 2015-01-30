@@ -196,8 +196,12 @@ public class ArrayList implements List {
 	 * @param index the index
 	 */
 	public void arrayCopierRemove(int index){
-		for(int i = index; i < Count; i++){
-			listArray[i] = listArray[(i+1)];
+		Object[] removeArray = new Object[Count];
+		for(int i = 0; i < this.size(); i++){
+			removeArray[i] = listArray[i];
+		}
+		for(int i = index; i < Count-1; i++){
+			listArray[i] = removeArray[(i+1)];
 		}
 	}
 	
@@ -207,8 +211,11 @@ public class ArrayList implements List {
 	 * @param index the index
 	 */
 	public void arrayCopierAdd(int index){
+		for(int i = 0; i < this.size(); i++){
+			tempArray[i] = listArray[i];
+		}
 		for(int i = index; i < Count; i++){
-			listArray[(i+1)] = listArray[i];
+			listArray[(i+1)] = tempArray[i];
 		}
 	}
 	
