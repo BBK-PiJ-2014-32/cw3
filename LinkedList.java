@@ -77,21 +77,16 @@ public class LinkedList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(this.isEmpty() == false){
-			if(index < 0 || index - 1 > Count){
-				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				return errorObj;
-			} else {
-				Node thisNode = first;
+		ReturnObject returnObj = errorChecker(index);
+		if(returnObj.hasError() != true){ 
+			Node thisNode = first;
 				for(int i = 0; i < index; i++){;
 					thisNode = thisNode.next;
-				} 
-				ReturnObject returnObj = new ReturnObjectImpl(thisNode.objectValue);
-				return returnObj;
-			}
+					} 
+				ReturnObject getObj = new ReturnObjectImpl(thisNode.objectValue);
+				return getObj;
 		} else {
-			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return emptyStructureError;
+			return returnObj;
 		}
 	}
 
@@ -196,10 +191,10 @@ public class LinkedList implements List {
 	
 
 	private ReturnObjectImpl errorChecker(int index){
-		if (index < 0 || index >= Count){
-			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-		} else if (this.isEmpty() == true){
+		if (this.isEmpty() == true){
 			return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+		} else if (index < 0 || index >= Count){
+			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 		} else {
 			return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 		}

@@ -63,6 +63,5 @@ public class ReturnObjectImpl implements ReturnObject {
 		} else {
 			return returnObject;
 		}
-
 	}
 }
