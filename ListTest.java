@@ -249,7 +249,7 @@ public class ListTest {
 	 * Linked list remove test.
 	 */
 	@Test
-	public void LinkedListRemoveTest(){
+	public void linkedListRemoveTest(){
 		List myLinkedList = new LinkedList();
 		myLinkedList.add("a");
 		myLinkedList.add("b");
@@ -268,7 +268,7 @@ public class ListTest {
 	 * Linked list empty test.
 	 */
 	@Test
-	public void LinkedListEmptyTest(){
+	public void linkedListEmptyTest(){
 		List myLinkedList = new LinkedList();
 		boolean output = myLinkedList.isEmpty();
 		boolean expected = true;
@@ -279,7 +279,7 @@ public class ListTest {
 	 * Linked list size test.
 	 */
 	@Test
-	public void LinkedListSizeTest(){
+	public void linkedListSizeTest(){
 		List myLinkedList = new LinkedList();
 		myLinkedList.add("a");
 		myLinkedList.add("b");
@@ -293,11 +293,44 @@ public class ListTest {
 	}
 	
 	@Test
-	public void LinkedListEmptyErrorTest(){
+	public void linkedListEmptyErrorTest(){
 		List myLinkedList = new LinkedList();
 		ReturnObject returObj = myLinkedList.get(0);
 		ErrorMessage output = returObj.getError();
 		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void linkedListOutofBoundsErrorTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		ReturnObject returObj = myLinkedList.get(5);
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void dualListTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add("f");
+		myLinkedList.remove(3);
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myLinkedList.add(myArrayList);
+		ReturnObject returObj = myLinkedList.get(5);
+		Object output = returObj.getReturnValue();
+		Object expected = myArrayList;
 		assertEquals(expected, output);
 	}
 }
