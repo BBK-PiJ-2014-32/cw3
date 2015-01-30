@@ -162,9 +162,9 @@ public class ListTest {
 		myArrayList.remove(4);
 		myArrayList.add(5, "new");
 		myArrayList.remove(11);
-		ReturnObject returObj = myArrayList.get(10);
+		ReturnObject returObj = myArrayList.get(5);
 		Object output = returObj.getReturnValue();
-		Object expected = "m";
+		Object expected = "new";
 		assertEquals(expected, output);
 	}
 	

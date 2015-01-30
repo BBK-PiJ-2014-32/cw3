@@ -104,6 +104,7 @@ public class ArrayList implements List {
 				ReturnObject removedObj = new ReturnObjectImpl(listArray[index]);
 				arrayCopierRemove(index);
 				Count--;
+				listArray[Count] = null;
 				return removedObj;
 			} else {
 				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -202,7 +203,7 @@ public class ArrayList implements List {
 		}
 		for(int i = index; i < Count-1; i++){
 			listArray[i] = removeArray[(i+1)];
-		}
+		} 
 	}
 	
 	/**
