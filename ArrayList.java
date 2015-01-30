@@ -99,20 +99,22 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject remove(int index){
-		if (this.isEmpty() == false){	
-			if(index > 0 || index < Count){
+		ReturnObject returnObj = errorChecker(listArray[index], index);
+		if(returnObj.hasError() != true){  
+		//if (this.isEmpty() == false){	
+			//if(index > 0 || index < Count){
 				ReturnObject removedObj = new ReturnObjectImpl(listArray[index]);
 				arrayCopierRemove(index);
 				Count--;
 				listArray[Count] = null;
 				return removedObj;
-			} else {
-				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				return outOfBoundsMessage;
-			}
+			//} else {
+				//ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				//return outOfBoundsMessage;
+			//}
 		} else {
-			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return emptyStructureError;
+			//ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
 		}
 	}
 
