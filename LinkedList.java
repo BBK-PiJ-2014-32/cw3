@@ -105,13 +105,20 @@ public class LinkedList implements List {
 	public ReturnObject remove(int index){
 		ReturnObject returnObj = errorChecker(index);
 		if(returnObj.hasError() != true){ 
-			Node current = new Node(null);
-			current = current.getNode(index);
-			previous = current.getNode(index-1);
-			previous.next = current.next;
-			Count--;
-			ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
-			return removedObj;
+			if(index == 0 && first.next == null){
+				//Count--;
+				ReturnObject removedObj = new ReturnObjectImpl(first.objectValue);
+				first = null;
+				return removedObj;
+			} else {
+				Node current = new Node(null);
+				current = current.getNode(index);
+				previous = current.getNode(index-1);
+				previous.next = current.next;
+				Count--;
+				ReturnObject removedObj = new ReturnObjectImpl(current.objectValue);
+				return removedObj;
+			}
 		} else {
 			return returnObj;
 		}
