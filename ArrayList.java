@@ -226,8 +226,10 @@ public class ArrayList implements List {
 				tempArray[i] = listArray[i];
 			}
 			listArray = new Object[Count * 2];
-			listArray = tempArray;
-		} 
+			for(int i = 0; i < this.size(); i++){
+				listArray[i] = tempArray[i];
+				}
+			} 
 
 }
 

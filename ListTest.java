@@ -144,6 +144,31 @@ public class ListTest {
 	}
 	
 	@Test
+	public void arrayLisSizeIncreaseRemoveGetTest(){
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		myArrayList.add("g");
+		myArrayList.add("h");
+		myArrayList.add("i");
+		myArrayList.add("j");
+		myArrayList.add("k");
+		myArrayList.add("l");
+		myArrayList.add("m");
+		myArrayList.remove(4);
+		myArrayList.add(5, "new");
+		//myArrayList.remove(11);
+		ReturnObject returObj = myArrayList.get(11);
+		Object output = returObj.getReturnValue();
+		Object expected = "l";
+		assertEquals(expected, output);
+	}
+	
+	@Test
 	public void arrayListNullErrorTest() {
 		List myArrayList = new ArrayList();
 		ReturnObject returObj = myArrayList.add(null);
