@@ -74,16 +74,9 @@ public class ArrayList implements List {
 	public ReturnObject get(int index){
 		ReturnObject returnObj = errorChecker(index);
 		if(returnObj.hasError() != true){  
-		//if(this.isEmpty() == false){	
-			//if(index < 0 || index + 1 > Count){
-				//ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				//return errorObj;
-			//} else {
-				ReturnObject getObj = new ReturnObjectImpl(listArray[index]);
-				return getObj;
-			//}
+			ReturnObject getObj = new ReturnObjectImpl(listArray[index]);
+			return getObj;
 		} else {
-			//ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return returnObj;
 		}
 	}
