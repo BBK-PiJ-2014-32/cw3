@@ -72,17 +72,19 @@ public class ArrayList implements List {
 	 *         encapsulated in a ReturnObject
 	 */
 	public ReturnObject get(int index){
-		if(this.isEmpty() == false){	
-			if(index < 0 || index + 1 > Count){
-				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				return errorObj;
-			} else {
-				ReturnObject returnObj = new ReturnObjectImpl(listArray[index]);
-				return returnObj;
-			}
+		ReturnObject returnObj = errorChecker(listArray[index], index);
+		if(returnObj.hasError() != true){  
+		//if(this.isEmpty() == false){	
+			//if(index < 0 || index + 1 > Count){
+				//ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+				//return errorObj;
+			//} else {
+				ReturnObject getObj = new ReturnObjectImpl(listArray[index]);
+				return getObj;
+			//}
 		} else {
-			ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return emptyStructureError;
+			//ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return returnObj;
 		}
 	}
 
@@ -101,19 +103,12 @@ public class ArrayList implements List {
 	public ReturnObject remove(int index){
 		ReturnObject returnObj = errorChecker(listArray[index], index);
 		if(returnObj.hasError() != true){  
-		//if (this.isEmpty() == false){	
-			//if(index > 0 || index < Count){
-				ReturnObject removedObj = new ReturnObjectImpl(listArray[index]);
-				arrayCopierRemove(index);
-				Count--;
-				listArray[Count] = null;
-				return removedObj;
-			//} else {
-				//ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				//return outOfBoundsMessage;
-			//}
+			ReturnObject removedObj = new ReturnObjectImpl(listArray[index]);
+			arrayCopierRemove(index);
+			Count--;
+			listArray[Count] = null;
+			return removedObj;
 		} else {
-			//ReturnObject emptyStructureError = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return returnObj;
 		}
 	}
