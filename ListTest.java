@@ -333,4 +333,25 @@ public class ListTest {
 		Object expected = myArrayList;
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void fullLinkedListDeleteTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add("f");
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		ReturnObject returObj = myLinkedList.get(0);
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		assertEquals(expected, output);
+	}
 }
