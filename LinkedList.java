@@ -146,23 +146,17 @@ public class LinkedList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(int index, Object item){
-		//checks if item is null or not
-		if(item != null){  
-			if(index > 0 || index < Count){
-				Node current = new Node(null);
-				current = current.getNode(index-1);
-				tempNode = current.next;
-				current.next = new Node(item);
-				current.next.next = tempNode;
-				Count++;
-				return new ReturnObjectImpl(null);
-			} else {
-				ReturnObject outOfBoundsMessage = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-				return outOfBoundsMessage;
-			}
- 		} else {
- 			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return nullMessage;
+		ReturnObject returnObj = errorChecker(item, index);
+		if(returnObj.hasError() != true){  
+			Node current = new Node(null);
+			current = current.getNode(index-1);
+			tempNode = current.next;
+			current.next = new Node(item);
+			current.next.next = tempNode;
+			Count++;
+			return new ReturnObjectImpl(null);
+		} else {
+ 			return returnObj;
  			} 
 		}
 	
