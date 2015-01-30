@@ -104,9 +104,9 @@ public class ListTest {
 		assertEquals(expected, output);
 	}
 	
-	@Test
+	/*@Test No longer needed, visibility of method no changed to private
 	public void arrayListIsFullTest(){
-		List myArrayList = new ArrayList();
+		ArrayList myArrayList = new ArrayList();
 		myArrayList.add("a");
 		myArrayList.add("b");
 		myArrayList.add("c");
@@ -117,10 +117,10 @@ public class ListTest {
 		myArrayList.add("h");
 		myArrayList.add("i");
 		myArrayList.add("j");
-		boolean output = ((ArrayList) myArrayList).isArrayFull();
+		boolean output = myArrayList.isArrayFull();
 		boolean expected = true;
 		assertEquals(expected, output);
-	}
+	}*/
 	
 	@Test
 	public void arrayLisSizeIncreaseTest(){
@@ -174,6 +174,23 @@ public class ListTest {
 		ReturnObject returObj = myArrayList.add(null);
 		Object output = returObj.getError();
 		Object expected = ErrorMessage.INVALID_ARGUMENT;
+		assertEquals(expected, output);
+	}
+	
+	
+	@Test
+	public void arrayListOutofBoundsTest() {
+		List myArrayList = new ArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.add("f");
+		myArrayList.add("g");
+		ReturnObject returObj = myArrayList.get(9);
+		Object output = returObj.getError();
+		Object expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
 		assertEquals(expected, output);
 	}
 	

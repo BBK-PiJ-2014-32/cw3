@@ -73,7 +73,7 @@ public class ArrayList implements List {
 	 */
 	public ReturnObject get(int index){
 		if(this.isEmpty() == false){	
-			if(index < 0 || index - 1 > Count){
+			if(index < 0 || index + 1 > Count){
 				ReturnObject errorObj = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 				return errorObj;
 			} else {
@@ -196,7 +196,7 @@ public class ArrayList implements List {
 	 *
 	 * @param index the index
 	 */
-	public void arrayCopierRemove(int index){
+	private void arrayCopierRemove(int index){
 		Object[] removeArray = new Object[Count];
 		for(int i = 0; i < this.size(); i++){
 			removeArray[i] = listArray[i];
@@ -211,7 +211,7 @@ public class ArrayList implements List {
 	 *
 	 * @param index the index
 	 */
-	public void arrayCopierAdd(int index){
+	private void arrayCopierAdd(int index){
 		for(int i = 0; i < this.size(); i++){
 			tempArray[i] = listArray[i];
 		}
@@ -220,7 +220,7 @@ public class ArrayList implements List {
 		}
 	}
 	
-	public boolean isArrayFull(){
+	private boolean isArrayFull(){
 		if(Count == listArray.length){
 			return true;
 		} else{
@@ -228,7 +228,7 @@ public class ArrayList implements List {
 		}
 	}
 	
-	public void increaseArraySize(){
+	private void increaseArraySize(){
 			tempArray = new Object[Count * 2]; 
 			for(int i = 0; i < this.size(); i++){
 				tempArray[i] = listArray[i];
@@ -239,5 +239,6 @@ public class ArrayList implements List {
 				}
 			} 
 
+	
 }
 
