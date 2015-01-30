@@ -164,31 +164,28 @@ public class ArrayList implements List {
 	 *         the item added or containing an appropriate error message
 	 */
 	public ReturnObject add(Object item){
+		ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
 		if(item != null){  
 			//checks whether first node is null
 			if (listArray[0] == null){
 				listArray[0] = item;
 				Count++;
-				ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
-				return emptyObj;
+				return returnObj;
 			}else {
 					if(isArrayFull() == true){
 						increaseArraySize();
 						listArray[Count] = item;
 						Count++;	
-						ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
-						return emptyObj;
+						return returnObj;
 					} else {
 						listArray[Count] = item;
 						Count++;	
-						ReturnObject emptyObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
-						return emptyObj;
+						return returnObj;
 				}
 			}
  		} else {
- 			ReturnObject nullMessage = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return nullMessage;
- 			}
+ 			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+			}
 		}	
 	
 	/**
@@ -238,8 +235,8 @@ public class ArrayList implements List {
 				listArray[i] = tempArray[i];
 				}
 			} 
-	private ReturnObjectImpl errorhecker(int index){
-		if(this == null){
+	private ReturnObjectImpl errorhecker(Object item, int index){
+		if(item == null){
 			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 		} else if (index < 0 || index >= Count){
 			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
