@@ -22,9 +22,10 @@ public class ImprovedStackImplTest {
 		testStack.push("e");
 		testStack.push("f");
 		testStack.reverse();
+		testStack.pop();
 		ReturnObject returnObj = testStack.top();
 		Object output = returnObj.getReturnValue();
-		Object expected = "a";
+		Object expected = "b";
 		assertEquals(expected, output);
 	}
 	
