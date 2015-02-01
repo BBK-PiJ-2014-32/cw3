@@ -52,5 +52,31 @@ public class FunctionalArrayListTest {
 		Object expected = "b";
 		assertEquals(expected, output);
 	}
-	
+	@Test
+	public void fullTest() {
+		FunctionalArrayList myArrayList = new FunctionalArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.remove(2);
+		myArrayList.add("d");
+		myArrayList.add("e");
+		myArrayList.remove(2);
+		myArrayList.add("f");
+		myArrayList.add(123);
+		myArrayList.add(12);
+		myArrayList.add("something");
+		myArrayList.add(2);
+		myArrayList.remove(2);
+		myArrayList.add(187.12);
+		myArrayList.add("A");
+		myArrayList.add("B");
+		myArrayList.add("C");
+		myArrayList.add("D");
+		myArrayList.add("E");
+		myArrayList.remove(2);
+		myArrayList.rest();
+		System.out.println(myArrayList.get(0).getReturnValue());
+		
+	}
 }

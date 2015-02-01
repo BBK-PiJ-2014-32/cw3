@@ -67,7 +67,7 @@ public class StackImpl extends AbstractStack implements Stack {
 	@Override
 	public ReturnObject pop() {
 		if(internalList.isEmpty() == false){
-			ReturnObject returnObj = internalList.remove(internalList.size() - 1);
+			ReturnObject returnObj = internalList.remove(internalList.size()-1);
 			stackSize--;
 			return returnObj;
 		} else {
