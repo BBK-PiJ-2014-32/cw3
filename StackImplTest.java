@@ -21,9 +21,10 @@ public class StackImplTest {
 		testStack.push("d");
 		testStack.push("e");
 		testStack.push("f");
+		testStack.pop();
 		ReturnObject returObj = testStack.top();
 		Object output = returObj.getReturnValue();
-		Object expected = "f";
+		Object expected = "e";
 		assertEquals(expected, output);
 	}
 	
@@ -39,13 +40,25 @@ public class StackImplTest {
 		testStack.push("c");
 		testStack.push("d");
 		testStack.push("e");
-		testStack.push("f");
+		testStack.push(null);
 		testStack.pop();
 		testStack.pop();
 		testStack.pop();
 		ReturnObject returObj = testStack.pop();
 		Object output = returObj.getReturnValue();
-		Object expected = "c";
+		Object expected = "b";
+		assertEquals(expected, output);
+	}
+	
+	@Test
+	public void nullPushTest(){
+		List testLinkedList = new LinkedList();
+		StackImpl testStack = new StackImpl(testLinkedList);
+		testStack.push(null);
+		testStack.push(null);
+		ReturnObject returObj = testStack.pop();
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
 		assertEquals(expected, output);
 	}
 	
