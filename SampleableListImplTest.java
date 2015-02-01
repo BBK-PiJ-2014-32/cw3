@@ -24,8 +24,9 @@ public class SampleableListImplTest {
 		testSampleList.add("h");
 		testSampleList.add("i");
 		SampleableListImpl newSampleList = testSampleList.sample();
-		int output = newSampleList.size();
-		int expected = 5;
+		ReturnObject returObj = newSampleList.get(2);
+		Object output = returObj.getReturnValue();
+		Object expected = "e";
 		assertEquals(expected, output);
 	}
 
