@@ -38,4 +38,19 @@ public class FunctionalArrayListTest {
 		assertEquals(expected, output);
 	}
 
+	@Test
+	public void restValueTest() {
+		FunctionalArrayList myArrayList = new FunctionalArrayList();
+		myArrayList.add("a");
+		myArrayList.add("b");
+		myArrayList.add("c");
+		myArrayList.add("d");
+		myArrayList.add("e");
+		FunctionalArrayList newArrayList = myArrayList.rest();
+		ReturnObject returnObj = newArrayList.get(0);
+		Object output = returnObj.getReturnValue();
+		Object expected = "b";
+		assertEquals(expected, output);
+	}
+	
 }
