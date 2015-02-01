@@ -76,7 +76,7 @@ public class FunctionalArrayListTest {
 		myArrayList.add("E");
 		myArrayList.remove(2);
 		myArrayList.rest();
-		System.out.println(myArrayList.get(0).getReturnValue());
+		System.out.println(myArrayList.get(4).getReturnValue());
 		FunctionalArrayList newArrayList = myArrayList.rest();
 		System.out.println(myArrayList.get(0).getReturnValue());
 		System.out.println(newArrayList.get(0).getReturnValue());
