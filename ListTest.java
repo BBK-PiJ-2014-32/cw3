@@ -51,9 +51,11 @@ public class ListTest {
 		myArrayList.add("d");
 		myArrayList.add("e");
 		myArrayList.add("f");
-		ReturnObject returObj = myArrayList.remove(2);
+		myArrayList.remove(0);
+		myArrayList.remove(0);
+		ReturnObject returObj = myArrayList.remove(3);
 		Object output = returObj.getReturnValue();
-		Object expected = "c";
+		Object expected = "f";
 		assertEquals(expected, output);
 	}
 	
@@ -70,9 +72,10 @@ public class ListTest {
 		myArrayList.add("e");
 		myArrayList.add("f");
 		myArrayList.remove(2);
-		ReturnObject returObj = myArrayList.get(5);
-		Object output = returObj.getReturnValue();
-		Object expected = null;
+		myArrayList.remove(5);
+		ReturnObject returObj = myArrayList.remove(5);
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
 		assertEquals(expected, output);
 	}
 	
@@ -202,9 +205,13 @@ public class ListTest {
 	public void linkedListTest(){
 		List myLinkedList = new LinkedList();
 		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.remove(0);
+		myLinkedList.add("d");
 		ReturnObject returObj = myLinkedList.get(0);
 		Object output = returObj.getReturnValue();
-		Object expected = "a";
+		Object expected = "b";
 		assertEquals(expected, output);
 	}
 	
@@ -287,8 +294,17 @@ public class ListTest {
 		myLinkedList.add("d");
 		myLinkedList.add("e");
 		myLinkedList.add("f");
-		int output = myLinkedList.size();
-		int expected = 6;
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		myLinkedList.remove(0);
+		//int output = myLinkedList.size();
+		//int expected = 6;
+		ReturnObject returObj = myLinkedList.remove(0);
+		ErrorMessage output = returObj.getError();
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
 		assertEquals(expected, output);
 	}
 	

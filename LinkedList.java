@@ -106,12 +106,17 @@ public class LinkedList implements List {
 		ReturnObject returnObj = errorChecker(index);
 		if(returnObj.hasError() != true){ 
 			if(index == 0 && first.next == null){
-				Count--;
 				ReturnObject removedObj = new ReturnObjectImpl(first.objectValue);
 				first = null;
+				Count--;
+				return removedObj;
+			} else if (index == 0){
+				ReturnObject removedObj = new ReturnObjectImpl(first.objectValue);
+				first = first.next;
+				Count--;
 				return removedObj;
 			} else {
-				Node current = new Node(null);
+				Node current = tempNode.getNode(index);
 				previous = current.getNode(index-1);
 				previous.next = previous.next.next;
 				Count--;
