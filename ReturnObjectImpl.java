@@ -1,4 +1,4 @@
-// TODO: Auto-generated Javadoc
+
 /**
  * The wrapper class containing either the object or the error message.
  *
