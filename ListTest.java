@@ -375,4 +375,21 @@ public class ListTest {
 		//Object expected = "e";
 		assertEquals(expected, output);
 	}
+	
+	@Test
+	public void fullLinkedListOverloadAddTest(){
+		List myLinkedList = new LinkedList();
+		myLinkedList.add("a");
+		myLinkedList.add("b");
+		myLinkedList.add("c");
+		myLinkedList.add("d");
+		myLinkedList.add("e");
+		myLinkedList.add(2, "f");
+		myLinkedList.add(0, "z");
+		myLinkedList.add(4, "something");
+		ReturnObject returObj = myLinkedList.get(7);
+		Object output = returObj.getReturnValue();
+		Object expected = "e";
+		assertEquals(expected, output);
+	}
 }
