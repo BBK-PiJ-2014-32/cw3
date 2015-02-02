@@ -3,7 +3,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * JUnit test class for the StackImpl class.
  */
