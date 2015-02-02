@@ -1,7 +1,8 @@
 
+// TODO: Auto-generated Javadoc
 /**
- * An ArrayList implementation of the list interface 
- * 
+ * An ArrayList implementation of the list interface .
+ *
  * @author P Hannant
  */
 public class ArrayList implements List {
@@ -24,9 +25,7 @@ public class ArrayList implements List {
 	}
 	
 	/**
-	 * Returns true if the list is empty, false otherwise. 
-	 * 
-	 * @return true if the list is empty, false otherwise. 
+	 * {@inheritDoc}
 	 */
 	public boolean isEmpty(){
 		if(listArray[0] == null){
@@ -37,23 +36,14 @@ public class ArrayList implements List {
 	}
 
 	/**
-	 * Returns the number of items currently in the list.
-	 * 
-	 * @return the number of items currently in the list
+	 * {@inheritDoc}
 	 */
 	public int size(){
 		return Count;
 	}
 
 	/**
-	 * Returns the elements at the given position. 
-	 * 
-	 * If the index is negative or greater or equal than the size of
-	 * the list, then an appropriate error must be returned.
-	 * 
-	 * @param index the position in the list of the item to be retrieved
-	 * @return the element or an appropriate error message, 
-	 *         encapsulated in a ReturnObject
+	 * {@inheritDoc}
 	 */
 	public ReturnObject get(int index){
 		ReturnObject returnObj = errorChecker(index);
@@ -66,16 +56,7 @@ public class ArrayList implements List {
 	}
 
 	/**
-	 * Returns the elements at the given position and removes it
-	 * from the list. The indeces of elements after the removed
-	 * element must be updated accordignly.
-	 * 
-	 * If the index is negative or greater or equal than the size of
-	 * the list, then an appropriate error must be returned.
-	 * 
-	 * @param index the position in the list of the item to be retrieved
-	 * @return the element or an appropriate error message, 
-	 *         encapsulated in a ReturnObject
+	 *{@inheritDoc}
 	 */
 	public ReturnObject remove(int index){
 		ReturnObject returnObj = errorChecker(listArray[index], index);
@@ -91,22 +72,7 @@ public class ArrayList implements List {
 	}
 
 	/**
-	 * Adds an element to the list, inserting it at the given
-	 * position. The indeces of elements at and after that position
-	 * must be updated accordignly.
-	 * 
-	 * If the index is negative or greater or equal than the size of
-	 * the list, then an appropriate error must be returned.
-	 * 
-	 * If a null object is provided to insert in the list, the
-	 * request must be ignored and an appropriate error must be
-	 * returned.
-	 * 
-	 * @param index the position at which the item should be inserted in
-	 *              the list
-	 * @param item the value to insert into the list
-	 * @return an ReturnObject, empty if the operation is successful
-	 *         the item added or containing an appropriate error message
+	 * {@inheritDoc}
 	 */
 	public ReturnObject add(int index, Object item){
 		ReturnObject returnObj = errorChecker(item, index);
@@ -122,15 +88,7 @@ public class ArrayList implements List {
 	}
 
 	/**
-	 * Adds an element at the end of the list.
-	 * 
-	 * If a null object is provided to insert in the list, the
-	 * request must be ignored and an appropriate error must be
-	 * returned.
-	 * 
-	 * @param item the value to insert into the list
-	 * @return an ReturnObject, empty if the operation is successful
-	 *         the item added or containing an appropriate error message
+	 * {@inheritDoc}
 	 */
 	public ReturnObject add(Object item){
 		ReturnObject returnObj = new ReturnObjectImpl(ErrorMessage.NO_ERROR);
@@ -186,6 +144,11 @@ public class ArrayList implements List {
 		}
 	}
 	
+	/**
+	 * Checks if is array full.
+	 *
+	 * @return true, if is array full
+	 */
 	private boolean isArrayFull(){
 		if(Count == listArray.length){
 			return true;
@@ -194,6 +157,9 @@ public class ArrayList implements List {
 		}
 	}
 	
+	/**
+	 * Increases the array size.
+	 */
 	private void increaseArraySize(){
 			tempArray = new Object[Count * 2]; 
 			for(int i = 0; i < this.size(); i++){
@@ -205,6 +171,12 @@ public class ArrayList implements List {
 				}
 			} 
 	
+	/**
+	 * Checks the input for errors and returns the relevant error message.
+	 *
+	 * @param index the index
+	 * @return the return object impl
+	 */
 	private ReturnObjectImpl errorChecker(int index){
 		if (index < 0 || index >= Count){
 			return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -217,6 +189,13 @@ public class ArrayList implements List {
 	
 	
 	
+	/**
+	 * Overloaded Error checker.
+	 *
+	 * @param item the item
+	 * @param index the index
+	 * @return the return object impl
+	 */
 	private ReturnObjectImpl errorChecker(Object item, int index){
 		if(item == null){
 			return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);

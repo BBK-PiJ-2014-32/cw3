@@ -1,4 +1,4 @@
-// TODO: Auto-generated Javadoc
+
 /**
  * CLass that extends AbstractStack and implements the methods of stack.
  * 
@@ -19,8 +19,8 @@ public class StackImpl extends AbstractStack implements Stack {
 		stackSize = 0;
 	}
 
-	/* (non-Javadoc)
-	 * @see Stack#isEmpty()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public boolean isEmpty() {
@@ -31,16 +31,16 @@ public class StackImpl extends AbstractStack implements Stack {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see Stack#size()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public int size() {
 		return stackSize;
 	}
 
-	/* (non-Javadoc)
-	 * @see Stack#push(java.lang.Object)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void push(Object item) {
@@ -48,8 +48,8 @@ public class StackImpl extends AbstractStack implements Stack {
 		stackSize++;
 	}
 
-	/* (non-Javadoc)
-	 * @see Stack#top()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ReturnObject top() {
@@ -61,8 +61,8 @@ public class StackImpl extends AbstractStack implements Stack {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see Stack#pop()
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public ReturnObject pop() {

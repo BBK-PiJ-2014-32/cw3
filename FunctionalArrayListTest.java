@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+
 /**
  * The JUnit test Class for the FunctionalArrayList Class.
  */
@@ -38,6 +39,9 @@ public class FunctionalArrayListTest {
 		assertEquals(expected, output);
 	}
 
+	/**
+	 * Rest value test.
+	 */
 	@Test
 	public void restValueTest() {
 		FunctionalArrayList myArrayList = new FunctionalArrayList();
@@ -52,6 +56,10 @@ public class FunctionalArrayListTest {
 		Object expected = "b";
 		assertEquals(expected, output);
 	}
+	
+	/**
+	 * Full test.
+	 */
 	@Test
 	public void fullTest() {
 		FunctionalArrayList myArrayList = new FunctionalArrayList();

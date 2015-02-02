@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * JUnit test Class for the FunctionalLinkedList Class.
  */
@@ -38,6 +39,9 @@ public class FunctionalLinkedListTest {
 		assertEquals(expected, output);
 	}
 
+	/**
+	 * Full test.
+	 */
 	@Test
 	public void fullTest() {
 		FunctionalLinkedList myLinkedList = new FunctionalLinkedList();

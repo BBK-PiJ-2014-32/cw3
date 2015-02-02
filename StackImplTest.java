@@ -3,6 +3,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * JUnit test class for the StackImpl class.
  */
@@ -50,6 +51,9 @@ public class StackImplTest {
 		assertEquals(expected, output);
 	}
 	
+	/**
+	 * Null push test.
+	 */
 	@Test
 	public void nullPushTest(){
 		List testLinkedList = new LinkedList();

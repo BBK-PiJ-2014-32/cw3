@@ -1,13 +1,22 @@
+// TODO: Auto-generated Javadoc
 /**
- * A wrapper containing either an object (the result of an operation
- * on a data structure) or an error value.
+ * The wrapper class containing either the object or the error message.
  *
- * @author PiJ
+ * @author P Hannant
  */
 public class ReturnObjectImpl implements ReturnObject {
+	
+	/** The return object. */
 	private Object returnObject;
+	
+	/** The error. */
 	private ErrorMessage error;
 	
+	/**
+	 * Instantiates a new return object impl.
+	 *
+	 * @param object the object
+	 */
 	public ReturnObjectImpl(Object object){
 		if(object == ErrorMessage.EMPTY_STRUCTURE || object == ErrorMessage.INDEX_OUT_OF_BOUNDS || object == ErrorMessage.INVALID_ARGUMENT){
 			this.error = (ErrorMessage) object;
@@ -16,9 +25,9 @@ public class ReturnObjectImpl implements ReturnObject {
 			this.error = ErrorMessage.NO_ERROR;
 		}
 		}
+	
 	/**
-	 * Returns whether there has been an error
-	 * @return whether there has been an error
+	 * {@inheritDoc}
 	 */
 	public boolean hasError(){
 		if (error == ErrorMessage.NO_ERROR){
@@ -29,12 +38,7 @@ public class ReturnObjectImpl implements ReturnObject {
 	}
 
 	/**
-	 * Returns the error message. 
-	 * 
-	 * This method must return NO_ERROR if and only if
-	 * {@hasError} returns false.
-	 * 
-	 * @return the error message
+	 * {@inheritDoc}
 	 */
 	public ErrorMessage getError(){
 		if (hasError() == false){
@@ -45,17 +49,7 @@ public class ReturnObjectImpl implements ReturnObject {
 	}
 
 	/**
-	 * Returns the object wrapped in this ReturnObject, i.e. the
-	 * result of the operation if it was successful, or null if
-	 * there has been error.
-	 * 
-	 * Note that the output of this method must be null if {@see
-	 * hasError} returns true, but the opposite is not true: if
-	 * {@see hasError} returns false, this method may or may not
-	 * return null.
-	 * 
-	 * @return the return value from the method or null if there has been an
-	 *         error
+	 * {@inheritDoc}
 	 */
 	public Object getReturnValue(){
 		if (hasError() == true){
