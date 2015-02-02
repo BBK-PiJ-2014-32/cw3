@@ -1,6 +1,6 @@
 /**
  * An implementation of a stack, a data structure of type LIFO (Last
- * In, First Out).
+ * In, First Out). 
  * 
  * Classes implementing this interface must use a {@see List} as the
  * underlying data structure to store the elements on the stack. 

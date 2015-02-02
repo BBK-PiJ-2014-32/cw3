@@ -7,7 +7,7 @@ public class SampleableListImpl extends ArrayList implements SampleableList {
 	
 	
 	/**
-	 * {@inheritDoc}
+	 * {@inheritDoc} 
 	 */
 	public SampleableListImpl sample(){
 		if (this.isEmpty() == false){

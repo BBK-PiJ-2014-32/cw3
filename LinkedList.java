@@ -12,6 +12,7 @@ public class LinkedList implements List {
 	/** The temp node. */
 	private Node tempNode;
 	
+	/** The previous. */
 	private Node previous; 
 	
 	/** The index count. */

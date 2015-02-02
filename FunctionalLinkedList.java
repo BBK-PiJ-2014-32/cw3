@@ -5,6 +5,7 @@
  */
 public class FunctionalLinkedList extends LinkedList implements FunctionalList {
 	
+	/** The Func linked list obj. */
 	private Object FuncLinkedListObj;
 	
     /**

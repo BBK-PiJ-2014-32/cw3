@@ -5,8 +5,12 @@
  */
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	
+	/** The my func array list. */
 	private Object[] myFuncArrayList;
 	
+		/**
+		 * Instantiates a new functional array list.
+		 */
 		public FunctionalArrayList (){
 			this.myFuncArrayList = new Object[10];
 		}

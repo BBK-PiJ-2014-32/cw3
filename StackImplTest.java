@@ -2,7 +2,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
 /**
  * JUnit test class for the StackImpl class.
  */

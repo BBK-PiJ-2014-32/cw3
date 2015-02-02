@@ -1,4 +1,3 @@
-
 /**
  * The wrapper class containing either the object or the error message.
  *

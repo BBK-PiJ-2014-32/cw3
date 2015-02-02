@@ -31,6 +31,6 @@ public abstract class AbstractStack implements Stack {
      */
     public AbstractStack(List list) {
 	  this.internalList = list;
-    }
+    } 
 }
 

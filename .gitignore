@@ -19,3 +19,8 @@
 /Stack.class
 /StackImpl.class
 /ListTest.class
+/FunctionalArrayListTest.class
+/FunctionalLinkedListTest.class
+/ImprovedStackImplTest.class
+/SampleableListImplTest.class
+/StackImplTest.class

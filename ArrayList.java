@@ -1,5 +1,4 @@
 
-// TODO: Auto-generated Javadoc
 /**
  * An ArrayList implementation of the list interface .
  *

@@ -2,8 +2,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
-
 /**
  * The JUnit test Class for the FunctionalArrayList Class.
  */

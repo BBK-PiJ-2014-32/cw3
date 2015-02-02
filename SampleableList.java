@@ -1,6 +1,6 @@
 /**
  * A sampleable list can be sampled. 
- * 
+ *  
  * @author PiJ
  */
 public interface SampleableList extends List {

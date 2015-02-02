@@ -2,7 +2,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
 /**
  * JUnit test Class for both the LinkedList and ArrayList classes.
  */

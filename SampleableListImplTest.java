@@ -4,7 +4,7 @@ import org.junit.Test;
 
 
 /**
- * JUnit test class for the SampleableListImpl class..
+ * JUnit test class for the SampleableListImpl class.
  */
 public class SampleableListImplTest {
 

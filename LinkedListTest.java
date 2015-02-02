@@ -1,6 +1,14 @@
 
+/**
+ * The Class LinkedListTest used initially before JUnit testing was used.
+ */
 public class LinkedListTest {
 	//main primary test code
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args){
 		List testList = new LinkedList();
 		testList.add(1);

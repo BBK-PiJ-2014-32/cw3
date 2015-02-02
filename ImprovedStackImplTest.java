@@ -124,7 +124,6 @@ public class ImprovedStackImplTest {
 		boolean output = testStack.isEmpty();
 		boolean expected = false;
 		assertEquals(expected, output);
-
 	}
 
 }

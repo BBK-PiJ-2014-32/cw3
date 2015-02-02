@@ -6,11 +6,23 @@
  */
 public class ImprovedStackImpl implements ImprovedStack {
 	
+	/** The internal list. */
 	private List internalList;
+	
+	/** The return list. */
 	private List returnList;
+	
+	/** The stack size. */
 	private int stackSize;
+	
+	/** The items removed. */
 	private int itemsRemoved;
 	
+	/**
+	 * Instantiates a new improved stack impl.
+	 *
+	 * @param list the list
+	 */
 	public ImprovedStackImpl(List list){
 		this.internalList = list;
 		stackSize = 0;

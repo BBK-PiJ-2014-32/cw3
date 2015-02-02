@@ -9,7 +9,7 @@
  * need another mechanism to report errors. In order to do that,
  * methods of this list will return a {@see ReturnObject} that will
  * contain either an object or an error value of the right kind (as
- * defined in {@see ErrorMessage}).
+ * defined in {@see ErrorMessage}). 
  * 
  * @author PiJ
  */
